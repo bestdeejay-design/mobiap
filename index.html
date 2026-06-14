@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#0A0A0F">
+    <title>Разработка финтех-платформ и IT-решений под ключ | AXIIOM</title>
+    <meta name="description" content="Разрабатываем финтех-платформы, системы лояльности и платежные решения под ключ. 20+ лет опыта, 50+ проектов. Соответствие 161-ФЗ, PCI DSS. Бесплатная консультация.">
+    <meta name="keywords" content="разработка финтех, платформа лояльности, платежная система, 161-ФЗ, PCI DSS, IT-разработка под ключ, Санкт-Петербург">
+    <link rel="canonical" href="https://axiiom.ru/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://axiiom.ru/">
+    <meta property="og:title" content="Разработка финтех-платформ и IT-решений под ключ | AXIIOM">
+    <meta property="og:description" content="Разрабатываем финтех-платформы, системы лояльности и платежные решения под ключ. 20+ лет опыта, 50+ проектов. Соответствие 161-ФЗ, PCI DSS.">
+    <meta property="og:image" content="https://axiiom.ru/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="AXIIOM">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://axiiom.ru/">
+    <meta name="twitter:title" content="Разработка финтех-платформ и IT-решений под ключ | AXIIOM">
+    <meta name="twitter:description" content="Разрабатываем финтех-платформы, системы лояльности и платежные решения под ключ. 20+ лет опыта, 50+ проектов.">
+    <meta name="twitter:image" content="https://axiiom.ru/og-image.png">
+
+    <!-- JSON-LD Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AXIIOM",
+      "alternateName": "ООО Аксиома",
+      "description": "IT-компания, специализирующаяся на разработке финтех-платформ, систем лояльности и highload-систем.",
+      "url": "https://axiiom.ru/",
+      "foundingDate": "2004",
+      "logo": "https://axiiom.ru/og-image.png",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Большой В.О. пр-кт, 83А, офис 329",
+          "addressLocality": "Санкт-Петербург",
+          "addressCountry": "RU"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Перерва, д. 16, офис 16П",
+          "addressLocality": "Москва",
+          "addressCountry": "RU"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+7-812-928-74-78",
+        "contactType": "customer service",
+        "email": "hello@axiiom.ru",
+        "availableLanguage": "Russian"
+      },
+      "sameAs": [
+        "https://t.me/axiiom"
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Сколько стоит разработка?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MVP финтех-платформы — от 2 млн руб. Точная смета после бесплатной Discovery-фазы."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Работаете ли вы по 161-ФЗ и PCI DSS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, у нас есть опыт банковских интеграций и прохождения аудитов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как получить доступ к демо?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Оставьте заявку — вышлем логины для тестовой среды (sandbox) в течение часа."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "IT-разработка",
+      "provider": {
+        "@type": "Organization",
+        "name": "AXIIOM"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Russia"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IT-услуги",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Разработка финтех-платформ" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Разработка платформ лояльности" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Разработка highload-сервисов" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Кибербезопасность и аудит" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Разработка сайтов и лендингов" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Разработка WEB-приложений" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Разработка мобильных приложений" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI/UX дизайн" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Графический дизайн" } }
+        ]
+      }
+    }
+    </script>
+
+    <!-- JSON-LD CaseStudy -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "Платформа лояльности для сети ресторанов — LOVII",
+          "description": "Внедрение white-label приложения лояльности LOVII с интеграцией в iiko/r_keeper. Результат: 40% повторных визитов, рост LTV на 35%.",
+          "author": { "@type": "Organization", "name": "AXIIOM" },
+          "articleSection": "Кейсы"
+        },
+        {
+          "@type": "Article",
+          "headline": "Блокчейн-платформа для учёта активов",
+          "description": "Построили платформу на BigChainDB со смарт-контрактами. Результат: 1 000 запросов/сек, нулевое мошенничество.",
+          "author": { "@type": "Organization", "name": "AXIIOM" },
+          "articleSection": "Кейсы"
+        },
+        {
+          "@type": "Article",
+          "headline": "Мобильная касса с BigData-аналитикой",
+          "description": "Разработка мобильной кассы для кафе и ресторанов. Результат: автоматизация 100+ точек, рост выручки на 22%.",
+          "author": { "@type": "Organization", "name": "AXIIOM" },
+          "articleSection": "Кейсы"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root{--clr-bg:#0A0A0F;--clr-bg-alt:#0E0E14;--clr-surface:#12121A;--clr-surface-hover:#1A1A24;--clr-text:#C7C7CC;--clr-heading:#F5F5F7;--clr-muted:#8E8E93;--clr-faint:#78787D;--clr-border:rgba(255,255,255,.06);--clr-border-hover:rgba(255,255,255,.1);--clr-hero-bg:#0A0A0F;--clr-accent:#D4A574;--clr-accent2:#8B9D83}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{font-size:16px;scroll-behavior:smooth}
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:1.0625rem;background:var(--clr-bg);color:var(--clr-text);line-height:1.65;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+        .noise{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+        .grid-overlay{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;background-image:linear-gradient(var(--clr-border) 1px,transparent 1px),linear-gradient(90deg,var(--clr-border) 1px,transparent 1px);background-size:60px 60px}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+        .content-wrapper{max-width:680px;margin:0 auto}
+        .wide-wrapper{max-width:1200px;margin:0 auto;padding:0 24px}
+        .header{position:sticky;top:0;left:0;width:100%;z-index:1000;transition:background .35s,backdrop-filter .35s,border-color .35s;border-bottom:1px solid transparent;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+        .header.scrolled{background:rgba(10,10,15,.85);border-bottom-color:var(--clr-border)}
+        .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;position:relative;z-index:100}
+        .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.1rem;letter-spacing:2px;text-transform:uppercase;color:var(--clr-heading);flex-shrink:0;text-decoration:none}
+        .logo svg{flex-shrink:0;width:30px;height:30px}
+        .logo svg rect,.logo svg circle{stroke:var(--clr-heading)}
+        .logo svg circle{fill:var(--clr-heading)}
+        a.logo{position:relative}
+        a.logo::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--clr-heading);transition:width .25s ease}
+        a.logo:hover::after{width:100%}
+        .nav-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+        .nav-links{display:flex;gap:32px;list-style:none;margin:0;padding:0}
+        .nav-links a{color:var(--clr-muted);text-decoration:none;font-size:.82rem;letter-spacing:.5px;transition:color .25s;position:relative;padding:4px 0}
+        .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--clr-heading);transition:width .25s ease}
+        .nav-links a:hover{color:var(--clr-heading)}
+        .nav-links a:hover::after{width:100%}
+        .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:1001;position:relative}
+        .nav-toggle span{display:block;width:22px;height:1.5px;background:var(--clr-muted);transition:transform .3s,opacity .3s;transform-origin:center}
+        .nav-toggle.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+        .nav-toggle.active span:nth-child(2){opacity:0}
+        .nav-toggle.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+        .theme-btn{background:none;border:1px solid var(--clr-border);border-radius:50%;width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;padding:0;color:var(--clr-muted)}
+        .theme-btn:hover{background:var(--clr-surface);border-color:var(--clr-border-hover);color:var(--clr-heading)}
+        .nav-links--desktop{display:flex;gap:32px}
+        .nav-overlay{display:none}
+        .hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;background:radial-gradient(ellipse 60% 40% at 30% 20%,rgba(100,80,220,.12),transparent),radial-gradient(ellipse 50% 35% at 70% 80%,rgba(0,180,255,.05),transparent),var(--clr-hero-bg);text-align:center;position:relative;overflow:hidden}
+        .hero-bg-svg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;max-width:800px;opacity:.6;pointer-events:none;animation:rotateSlow 60s linear infinite}
+        @keyframes rotateSlow{to{transform:translate(-50%,-50%) rotate(360deg)}}
+        .badge{display:inline-block;padding:6px 18px;border:1px solid var(--clr-border);border-radius:20px;font-size:.7rem;color:var(--clr-muted);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:24px;backdrop-filter:blur(4px)}
+        .hero-content h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:600;line-height:1.1;margin-bottom:20px;letter-spacing:-.02em;color:var(--clr-heading)}
+        .hero-desc{font-size:1.15rem;color:var(--clr-muted);max-width:560px;margin:0 auto 36px;line-height:1.7}
+        .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+        .hero-trust{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;font-size:.85rem;color:var(--clr-muted)}
+        .hero-trust span{display:flex;align-items:center;gap:8px}
+        .btn{display:inline-block;padding:14px 44px;border-radius:30px;background:var(--clr-heading);color:var(--clr-bg);text-decoration:none;font-weight:600;font-size:.9rem;letter-spacing:.5px;transition:transform .25s,box-shadow .25s}
+        .btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+        .btn-outline{background:transparent;color:var(--clr-heading);border:1px solid var(--clr-border-hover)}
+        .btn-outline:hover{background:var(--clr-surface);border-color:var(--clr-heading)}
+        .btn-nav{padding:8px 22px;font-size:.85rem;background:var(--clr-accent);color:#0A0A0F;border-radius:24px}
+        .glass-card{background:rgba(255,255,255,.03);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:0 8px 32px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);transition:all .3s cubic-bezier(.4,0,.2,1)}
+        .glass-card:hover{background:rgba(255,255,255,.05);transform:translateY(-4px)}
+        .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+        .result{font-size:.85rem;color:var(--clr-accent2);font-weight:600;margin:12px 0 16px}
+        .result a{color:inherit;text-decoration:none}
+        .result a:hover{text-decoration:underline}
+        @media(max-width:1023px){.nav-links--desktop{display:none}.btn-nav{display:none}.nav-overlay{display:flex;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(7,7,10,.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);z-index:1001;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s ease}.nav-overlay.open{opacity:1;pointer-events:auto}.nav-links{flex-direction:column;align-items:center;gap:0}.nav-links li{opacity:0;transform:translateY(20px);transition:opacity .4s ease,transform .4s ease}.nav-overlay.open .nav-links li{opacity:1;transform:translateY(0)}.nav-links a{font-size:1.4rem;letter-spacing:1px;padding:14px 0;display:block;color:var(--clr-heading)}.nav-links a::after{display:none}.nav-links a:hover{color:var(--clr-muted)}.nav-toggle{display:flex}.hero-bg-svg{max-width:500px}.stats{gap:24px}.footer-grid{grid-template-columns:1fr;gap:36px}}
+    </style>
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+  <link rel="stylesheet" href="/preloader.css">
+</head>
+<body id="top">
+<div id="preloader">
+<script>(function(){var p=document.getElementById('preloader');if(!p)return;if(sessionStorage.getItem('_seen')){p.style.display='none';return}sessionStorage.setItem('_seen','1');var t=Date.now();p._start=t;setTimeout(function(){p.classList.add('_rdy')},500);window.addEventListener('load',function(){var e=Date.now()-t;if(e<2000){setTimeout(function(){p.classList.add('hidden');setTimeout(function(){p.classList.add('hidden-done')},500)},2000-e)}else{p.classList.add('hidden');setTimeout(function(){p.classList.add('hidden-done')},500)}})})()</script>
+  <svg class="preloader-svg" viewBox="0 0 36 36" width="80" height="80">
+    <rect class="pr1" x="2" y="2" width="14" height="14" rx="2"/>
+    <rect class="pr2" x="20" y="2" width="14" height="14" rx="2"/>
+    <rect class="pr3" x="2" y="20" width="14" height="14" rx="2"/>
+    <rect class="pr4" x="20" y="20" width="14" height="14" rx="2"/>
+    <circle class="pc" cx="27" cy="27" r="3"/>
+  </svg>
+</div>
+
+<div class="noise"></div>
+<div class="grid-overlay"></div>
+
+
+<header class="header" id="header">
+    <div class="container">
+        <nav class="nav">
+            <a href="/" class="logo">
+                <svg width="30" height="30" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5" opacity=".4"/><rect x="20" y="2" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5" opacity=".4"/><rect x="2" y="20" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5" opacity=".4"/><rect x="20" y="20" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="27" cy="27" r="3" fill="currentColor" opacity=".8"/></svg>
+                <span>AXIIOM</span>
+            </a>
+            <ul class="nav-links nav-links--desktop" id="desktopNav"></ul>
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-nav" id="ctaBtn">Обсудить проект</a>
+                <button class="theme-btn" id="themeToggle" aria-label="Сменить тему"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+                <button class="nav-toggle" id="navToggle" aria-label="Меню"><span></span><span></span><span></span></button>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="nav-overlay" id="navOverlay">
+    <ul class="nav-links" id="mobileNav"></ul>
+</div>
+<header class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-bg-svg"><svg width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <circle cx="400" cy="300" r="280" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+  <circle cx="400" cy="300" r="200" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+  <circle cx="400" cy="300" r="120" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  <line x1="50" y1="300" x2="750" y2="300" stroke="rgba(255,255,255,0.04)" stroke-width="2"/>
+  <line x1="400" y1="20" x2="400" y2="580" stroke="rgba(255,255,255,0.04)" stroke-width="2"/>
+  <path d="M200 300 L400 100 L600 300 L400 500 Z" stroke="rgba(255,255,255,0.05)" stroke-width="2" fill="none"/>
+  <circle cx="400" cy="300" r="4" fill="rgba(255,255,255,0.12)"/>
+</svg></div>
+            <p class="badge">AXIIOM FinTech</p>
+            <h1>Финтех-инфраструктура<br>и IT-решения для бизнеса</h1>
+            <p class="hero-desc">Создаём финтех-решения и IT-продукты для финансового сектора: платформы лояльности, маркетплейсы и платёжные системы под ключ. Берём на себя комплаенс (161-ФЗ, PCI&nbsp;DSS), разработку банковского ПО и интеграцию с банками.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn" onclick="ym(109391253,'reachGoal','cta_hero'); gtag('event','cta_hero');">Обсудить архитектуру проекта</a>
+                <a href="#demos" class="btn btn-outline" onclick="ym(109391253,'reachGoal','demo_view'); gtag('event','demo_view');">Смотреть демо-платформы</a>
+            </div>
+            <div class="hero-trust">
+                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--clr-accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 50+ проектов</span>
+                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--clr-accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 99.99% Uptime</span>
+                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--clr-accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Опыт банковских интеграций</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="problems" class="section">
+    <div class="container">
+        <p class="label reveal">Знакомые ситуации?</p>
+        <h2 class="reveal">Мы понимаем ваши боли</h2>
+        <div class="problems-grid">
+            <div class="glass-card reveal" style="padding:28px 24px; text-align:left;">
+                <p class="problem-text">Разработчики обещали золотые горы, но проект застрял</p>
+                <p class="solution-text"><strong>Решение:</strong> Мы фиксируем scope, сроки и бюджет на этапе Discovery.</p>
+            </div>
+            <div class="glass-card reveal" style="padding:28px 24px; text-align:left;">
+                <p class="problem-text">Банк отказал в интеграции из-за 161-ФЗ</p>
+                <p class="solution-text"><strong>Решение:</strong> У нас есть опыт банковских интеграций и прохождения аудита PCI DSS.</p>
+            </div>
+            <div class="glass-card reveal" style="padding:28px 24px; text-align:left;">
+                <p class="problem-text">Сервис падает в пиковые нагрузки</p>
+                <p class="solution-text"><strong>Решение:</strong> Проектируем highload-архитектуру с горизонтальным масштабированием.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section dark">
+    <div class="container">
+        <p class="label reveal">Цифры и доверие</p>
+        <h2 class="reveal">Результаты в цифрах</h2>
+        <div class="stats reveal">
+            <div class="stat">
+                <span class="stat-num" data-target="50" data-suffix="+">0</span>
+                <span class="stat-label">реализованных проектов</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num stat-static">99.99%</span>
+                <span class="stat-label">гарантированный uptime</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num stat-static">20+</span>
+                <span class="stat-label">лет на рынке</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num stat-static">24/7</span>
+                <span class="stat-label">Мониторинг</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="section dark">
+    <div class="container">
+        <p class="label reveal">Услуги</p>
+        <h2 class="reveal">Финтех-разработка и IT-решения</h2>
+        <div class="grid">
+            <div class="glass-card reveal" style="padding:32px 24px; text-align:left;">
+                <h3>Финтех-платформы</h3>
+                <p>Сплитование, escrow, мультиэквайринг, соответствие 161-ФЗ</p>
+                <p class="result"><a href="/calculator/">Запуск за 3–4 месяца</a></p>
+            </div>
+            <div class="glass-card reveal" style="padding:32px 24px; text-align:left;">
+                <h3>Платформы лояльности</h3>
+                <p>White Label — готовая экосистема LOVII с мобильным приложением и аналитикой</p>
+                <p class="result"><a href="/calculator/">Рост LTV на 30–40%</a></p>
+                <a href="#demos" class="btn btn-card">Смотреть демо</a>
+            </div>
+            <div class="glass-card reveal" style="padding:32px 24px; text-align:left;">
+                <h3>Highload-сервисы</h3>
+                <p>Микросервисы, Kubernetes, выдерживающие миллионы запросов</p>
+                <p class="result"><a href="/calculator/">99.99% Uptime</a></p>
+            </div>
+            <div class="glass-card reveal" style="padding:32px 24px; text-align:left;">
+                <h3>Кибербезопасность</h3>
+                <p>Пентест, SAST/DAST, WAF, подготовка к сертификации</p>
+                <p class="result"><a href="/calculator/">Снижение рисков утечек на 95%</a></p>
+            </div>
+            <div class="glass-card reveal" style="padding:32px 24px; text-align:left;">
+                <h3>Сайты и лендинги</h3>
+                <p>Интернет-магазины, визитки, корпоративные сайты — от сбора требований до поддержки</p>
+                <p class="result"><a href="/calculator/">от 250 000 ₽</a></p>
+            </div>
+            <div class="glass-card reveal" style="padding:32px 24px; text-align:left;">
+                <h3>WEB-приложения</h3>
+                <p>Высоконагруженные сервисы на React, Vue, Node.js, Python, Go</p>
+                <p class="result"><a href="/calculator/">от 300 000 ₽</a></p>
+            </div>
+            <div class="glass-card reveal" style="padding:32px 24px; text-align:left;">
+                <h3>Мобильные приложения</h3>
+                <p>Нативные и кроссплатформенные iOS/Android приложения</p>
+                <p class="result"><a href="/calculator/">от 300 000 ₽</a></p>
+            </div>
+            <div class="glass-card reveal" style="padding:32px 24px; text-align:left;">
+                <h3>UI/UX дизайн</h3>
+                <p>Figma, Sketch, Adobe XD — интерфейсы на основе данных и исследований</p>
+                <p class="result"><a href="/calculator/">от 150 000 ₽</a></p>
+            </div>
+            <div class="glass-card reveal" style="padding:32px 24px; text-align:left;">
+                <h3>Графический дизайн</h3>
+                <p>Логотипы, фирменный стиль, брендбуки, подготовка макетов к печати</p>
+                <p class="result"><a href="/calculator/">от 100 000 ₽</a></p>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:40px;">
+            <a href="/calculator/" class="btn btn-outline" style="padding:14px 48px;">Рассчитать стоимость проекта</a>
+        </div>
+    </div>
+</section>
+
+<section id="cases" class="section">
+    <div class="container">
+        <p class="label reveal">Кейсы</p>
+        <h2 class="reveal">Задача → Решение → Бизнес-результат</h2>
+        <div class="cases-grid">
+            <div class="glass-card reveal" style="padding:28px 24px; text-align:left;">
+                <span class="case-tag">Платформа лояльности LOVII</span>
+                <p class="case-step"><span>Задача:</span> Сеть ресторанов теряла клиентов, не было данных о покупках.</p>
+                <p class="case-step"><span>Решение:</span> Внедрили white-label приложение LOVII с интеграцией в iiko/r_keeper и персонализированными push-уведомлениями.</p>
+                <p class="case-result">Результат: 40% клиентов вернулись повторно, средний чек вырос на 18%, LTV увеличился на 35%.</p>
+                <a href="#demos" class="btn btn-card">Посмотреть демо этого решения</a>
+            </div>
+            <div class="glass-card reveal" style="padding:28px 24px; text-align:left;">
+                <span class="case-tag">Блокчейн-платформа</span>
+                <p class="case-step"><span>Задача:</span> Нужна прозрачная система учёта активов с цифровой инвентаризацией.</p>
+                <p class="case-step"><span>Решение:</span> Построили платформу на BigChainDB со смарт-контрактами и криптозащитой.</p>
+                <p class="case-result">Результат: 1 000 запросов/сек, полная прослеживаемость операций, нулевое мошенничество.</p>
+                <a href="#demos" class="btn btn-card">Посмотреть демо этого решения</a>
+            </div>
+            <div class="glass-card reveal" style="padding:28px 24px; text-align:left;">
+                <span class="case-tag">Мобильная касса</span>
+                <p class="case-step"><span>Задача:</span> Кафе и рестораны не могли анализировать продажи в реальном времени.</p>
+                <p class="case-step"><span>Решение:</span> Разработали мобильную кассу с BigData-аналитикой и SmartData-отчётами.</p>
+                <p class="case-result">Результат: Автоматизация 100+ точек, рост выручки на 22%, время закрытия смены сокращено с 30 до 3 минут.</p>
+                <a href="#demos" class="btn btn-card">Посмотреть демо этого решения</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="process" class="section dark">
+    <div class="container">
+        <p class="label reveal">Процесс</p>
+        <h2 class="reveal">Как мы работаем</h2>
+        <div class="process-grid">
+            <div class="glass-card reveal" style="padding:24px 20px; text-align:left;">
+                <div class="process-num">01</div>
+                <h4>Discovery</h4>
+                <p>Аудит, фиксация бюджета и сроков. 1–2 недели.</p>
+            </div>
+            <div class="glass-card reveal" style="padding:24px 20px; text-align:left;">
+                <div class="process-num">02</div>
+                <h4>Дизайн и Архитектура</h4>
+                <p>Прототипы в Figma, схема базы данных.</p>
+            </div>
+            <div class="glass-card reveal" style="padding:24px 20px; text-align:left;">
+                <div class="process-num">03</div>
+                <h4>Разработка</h4>
+                <p>Двухнедельные спринты с регулярными демо.</p>
+            </div>
+            <div class="glass-card reveal" style="padding:24px 20px; text-align:left;">
+                <div class="process-num">04</div>
+                <h4>Безопасность и тесты</h4>
+                <p>Нагрузочное тестирование, пентест, проверка на 161-ФЗ.</p>
+            </div>
+            <div class="glass-card reveal" style="padding:24px 20px; text-align:left;">
+                <div class="process-num">05</div>
+                <h4>Релиз и SLA</h4>
+                <p>Деплой, обучение команды, поддержка 24/7.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="stack" class="section">
+    <div class="container">
+        <p class="label reveal">Технологический стек</p>
+        <h2 class="reveal">На чём строим</h2>
+        <div class="stack-grid reveal">
+            <div class="stack-group">
+                <h4>Backend</h4>
+                <p>PHP, Go, Ruby, Node.js, Python, PostgreSQL, Redis</p>
+            </div>
+            <div class="stack-group">
+                <h4>Frontend</h4>
+                <p>React, Next.js, Vue.js, TypeScript, Tailwind</p>
+            </div>
+            <div class="stack-group">
+                <h4>Mobile</h4>
+                <p>Swift, Kotlin, React Native, Flutter</p>
+            </div>
+            <div class="stack-group">
+                <h4>Infrastructure</h4>
+                <p>Kubernetes, Docker, Yandex Cloud, Terraform</p>
+            </div>
+            <div class="stack-group">
+                <h4>Security</h4>
+                <p>Vault, SonarQube, PCI DSS compliance</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="faq" class="section dark">
+    <div class="container">
+        <p class="label reveal">FAQ</p>
+        <h2 class="reveal">Частые вопросы</h2>
+        <div class="faq-grid reveal">
+            <div class="glass-card" style="padding:28px 24px; text-align:left;">
+                <h4>Сколько стоит разработка?</h4>
+                <p>MVP финтех-платформы — от 2 млн руб. Точная смета после бесплатной Discovery-фазы.</p>
+            </div>
+            <div class="glass-card" style="padding:28px 24px; text-align:left;">
+                <h4>Работаете ли вы по 161-ФЗ и PCI DSS?</h4>
+                <p>Да, у нас есть опыт банковских интеграций и прохождения аудитов.</p>
+            </div>
+            <div class="glass-card" style="padding:28px 24px; text-align:left;">
+                <h4>Как получить доступ к демо?</h4>
+                <p>Оставьте заявку — вышлем логины для тестовой среды (sandbox) в течение часа.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section cta-section">
+    <div class="container">
+        <div class="glass-card cta-card reveal">
+            <h2>Готовы обсудить архитектуру вашего проекта?</h2>
+            <p>Расскажите о задаче, мы предложим решение и рассчитаем стоимость за 24 часа.</p>
+            <div class="cta-contacts">
+                <a href="mailto:hello@axiiom.ru" class="btn">hello@axiiom.ru</a>
+                <a href="tel:+78129287478" class="btn btn-outline">+7 (812) 928-74-78</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="integrations" class="section dark">
+    <div class="container">
+        <p class="label reveal">Интеграции</p>
+        <h2 class="reveal">Мы интегрировали</h2>
+        <div class="partners-list reveal">
+            <span>Сбербанк</span>
+            <span>Альфа-Банк</span>
+            <span>Тинькофф</span>
+            <span>МТС</span>
+            <span>Билайн</span>
+            <span>Яндекс.Go</span>
+            <span>Яндекс</span>
+            <span>Aviasales</span>
+            <span>Ostrovok.ru</span>
+            <span>Сравни.ру</span>
+            <span>Ozon</span>
+            <span>Wildberries</span>
+            <span>СДЭК</span>
+            <span>1С</span>
+            <span>Магнит</span>
+            <span>Лента</span>
+            <span>Ашан</span>
+            <span>Метро</span>
+            <span>ЮMoney</span>
+            <span>Admitad</span>
+        </div>
+    </div>
+</section>
+
+<section id="demos" class="section">
+    <div class="container">
+        <p class="label reveal">Демо-платформы</p>
+        <h2 class="reveal">Потрогайте наши решения руками</h2>
+        <p class="text reveal">Не верьте на слово. Протестируйте работающие продукты. Доступ к админ-панелям предоставляем по запросу.</p>
+        <div class="demo-grid">
+            <a href="/demo/app/" class="demo-card reveal" data-demo>
+                <div class="demo-accent" style="background:linear-gradient(135deg,#00b894,#55efc4)"></div>
+                <div class="demo-body">
+                    <h3>App Demos</h3>
+                    <p>Каталог SPA-демо: мобильная касса с BigData-аналитикой, премиум такси (пассажир/водитель), онлайн-запись Alfred, логистика, HR-мотивация, eSIM Travel и другие.</p>
+                    <div class="demo-tags">
+                        <span>HTML/CSS/JS</span>
+                        <span>Mobile First</span>
+                        <span>Prototype</span>
+                    </div>
+                    <span class="demo-link">Смотреть демо &rarr;</span>
+                </div>
+            </a>
+            <a href="https://univerid.ru/" class="demo-card reveal" data-demo>
+                <div class="demo-accent" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)"></div>
+                <div class="demo-body">
+                    <h3>UniverID</h3>
+                    <p>Цифровая экосистема университета. Электронная зачётка, расписание, чат с деканатом, проход в общежитие — всё в одном приложении.</p>
+                    <div class="demo-tags">
+                        <span>HTML/CSS/JS</span>
+                        <span>UI/UX</span>
+                        <span>PWA</span>
+                    </div>
+                    <span class="demo-link">Смотреть демо &rarr;</span>
+                </div>
+            </a>
+            <a href="https://bestdeejay-design.github.io/padl/" class="demo-card reveal" data-demo>
+                <div class="demo-accent" style="background:linear-gradient(135deg,#fdcb6e,#f39c12)"></div>
+                <div class="demo-body">
+                    <h3>PadelPro</h3>
+                    <p>SAAS-платформа для управления падел-клубом: бронирование кортов, учёт клиентов, расписание, аналитика и финансы.</p>
+                    <div class="demo-tags">
+                        <span>SAAS</span>
+                        <span>Dashboard</span>
+                        <span>UI/UX</span>
+                    </div>
+                    <span class="demo-link">Смотреть демо &rarr;</span>
+                </div>
+            </a>
+            <a href="https://bestdeejay-design.github.io/catalog/" class="demo-card reveal" data-demo>
+                <div class="demo-accent" style="background:linear-gradient(135deg,#74b9ff,#0984e3)"></div>
+                <div class="demo-body">
+                    <h3>Каталог заведений</h3>
+                    <p>Каталог заведений России с поиском, фильтрацией, картой и подробной информацией о каждом месте.</p>
+                    <div class="demo-tags">
+                        <span>Vue</span>
+                        <span>API</span>
+                        <span>Карты</span>
+                    </div>
+                    <span class="demo-link">Смотреть демо &rarr;</span>
+                </div>
+            </a>
+            <a href="https://bestdeejay-design.github.io/booking/" class="demo-card reveal" data-demo>
+                <div class="demo-accent" style="background:linear-gradient(135deg,#2d3436,#636e72)"></div>
+                <div class="demo-body">
+                    <h3>Grand Hotel</h3>
+                    <p>Система бронирования номеров и услуг отеля: календарь доступности, онлайн-оплата, управление бронями.</p>
+                    <div class="demo-tags">
+                        <span>Vue</span>
+                        <span>Vite</span>
+                        <span>Booking</span>
+                    </div>
+                    <span class="demo-link">Смотреть демо &rarr;</span>
+                </div>
+            </a>
+            <a href="https://web-test.lovii.ru/" class="demo-card reveal" data-demo>
+                <div class="demo-accent" style="background:linear-gradient(135deg,#fd79a8,#e84393)"></div>
+                <div class="demo-body">
+                    <h3>Lovii — веб-приложение</h3>
+                    <p>Пользовательский интерфейс платформы лояльности: каталог, профиль, баллы, промокоды и история операций.</p>
+                    <div class="demo-tags">
+                        <span>React</span>
+                        <span>PWA</span>
+                        <span>UI/UX</span>
+                    </div>
+                    <span class="demo-link">Смотреть демо &rarr;</span>
+                </div>
+            </a>
+            <a href="https://b2b-test.lovii.ru/" class="demo-card reveal" data-demo>
+                <div class="demo-accent" style="background:linear-gradient(135deg,#a29bfe,#6c5ce7)"></div>
+                <div class="demo-body">
+                    <h3>Lovii — B2B-портал</h3>
+                    <p>Партнёрский портал для бизнеса: управление программами лояльности, отчёты и аналитика по клиентам.</p>
+                    <div class="demo-tags">
+                        <span>React</span>
+                        <span>B2B</span>
+                        <span>Dashboard</span>
+                    </div>
+                    <span class="demo-link">Смотреть демо &rarr;</span>
+                </div>
+            </a>
+            <a href="https://admin-test.lovii.ru/" class="demo-card reveal" data-demo>
+                <div class="demo-accent" style="background:linear-gradient(135deg,#55efc4,#00b894)"></div>
+                <div class="demo-body">
+                    <h3>Lovii — Админ-панель</h3>
+                    <p>Полная админ-панель платформы: пользователи, роли, контент, настройки системы и мониторинг.</p>
+                    <div class="demo-tags">
+                        <span>React</span>
+                        <span>Admin</span>
+                        <span>RBAC</span>
+                    </div>
+                    <span class="demo-link">Смотреть демо &rarr;</span>
+                </div>
+            </a>
+            <a href="https://bestdeejay-design.github.io/ambar/" class="demo-card reveal" data-demo>
+                <div class="demo-accent" style="background:linear-gradient(135deg,#d4a574,#8b5e3c)"></div>
+                <div class="demo-body">
+                    <h3>AMBAR</h3>
+                    <p>Инвестиционный лэндинг фуд-хаба и цифровой платформы в центре Санкт-Петербурга. Выручка 13,85 млн/мес, 30+ резидентов.</p>
+                    <div class="demo-tags">
+                        <span>Landing</span>
+                        <span>Food Tech</span>
+                        <span>Investment</span>
+                    </div>
+                    <span class="demo-link">Смотреть демо &rarr;</span>
+                </div>
+            </a>
+        </div>
+        <p class="demo-note reveal">Хотите подробнее о проекте или нужен доступ к админ-панели? <a href="#" onclick="openModal(); return false;" style="color:var(--clr-accent);text-decoration:none;border-bottom:1px solid var(--clr-accent);transition:opacity .2s;" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">Оставьте заявку</a> — ответим в течение часа.</p>
+    </div>
+</section>
+
+<footer id="contact" class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-info reveal">
+                <p class="label">Контакты</p>
+                <h2>Готовы к диалогу?</h2>
+                <div class="contact-item">
+                    <span class="contact-label">Телефон</span>
+                    <a href="tel:+78129287478">+7 (812) 928-74-78</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Почта</span>
+                    <a href="mailto:hello@axiiom.ru">hello@axiiom.ru</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Санкт-Петербург</span>
+                    <span class="contact-value">Большой В.О. пр-кт, 83А, офис 329</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Москва</span>
+                    <span class="contact-value">ул. Перерва, д. 16, пом. 16П</span>
+                </div>
+            </div>
+            <div class="footer-reqs reveal">
+                <p class="label">Реквизиты</p>
+                <p>ООО «Аксиома»</p>
+                <p>ИНН 7842223709 · ОГРН 1247800067690</p>
+                <p>ОКВЭД 62.01 — Разработка компьютерного программного обеспечения</p>
+                <p class="label bank-label">Банк</p>
+                <p>АО БАНК «ПСКБ»</p>
+                <p>р/с 40702810200000906387</p>
+                <p>БИК 044030852</p>
+            </div>
+        </div>
+        <div id="footerCopy"></div>
+    </div>
+</footer>
+<div class="modal-overlay" id="demoModal">
+    <div class="modal glass-card">
+        <button class="modal-close" id="modalClose" aria-label="Закрыть">&times;</button>
+        <h3>Получить доступ к админке</h3>
+        <p class="modal-sub">Вместе с доступом вы получите архитектурную схему и оценку стоимости аналогичного решения для вашего бизнеса.</p>
+        <form id="demoForm" class="modal-form">
+            <label>Имя</label>
+            <input type="text" name="name" placeholder="Иван Петров">
+            <label>Рабочий email <span class="req">*</span></label>
+            <input type="email" name="email" placeholder="ivan@company.ru" required>
+            <label>Компания</label>
+            <input type="text" name="company" placeholder="ООО «Компания»">
+            <label>Телефон</label>
+            <input type="tel" name="phone" placeholder="+7 999 123-45-67">
+            <label>Демо-продукт</label>
+            <select name="product">
+                <option value="">Выберите продукт</option>
+                <option value="univerid">UniverID</option>
+                <option value="foodie">Foodie</option>
+                <option value="app">App Demos</option>
+                <option value="qbis">Qbik</option>
+                <option value="padel">PadelPro</option>
+                <option value="catalog">Каталог заведений</option>
+                <option value="booking">Grand Hotel</option>
+                <option value="kodstudy">Код Доступа</option>
+                <option value="dajet">DAJET</option>
+                <option value="lovii">LOVII Platform</option>
+                <option value="ambar">AMBAR</option>
+            </select>
+            <button type="submit" class="btn">Отправить заявку</button>
+            <p class="modal-note">Отправляя форму, вы соглашаетесь с обработкой персональных данных.</p>
+        </form>
+    </div>
+</div>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.15 });
+reveals.forEach(r => observer.observe(r));
+
+const stats = document.querySelectorAll('.stat-num:not(.stat-static)');
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.target);
+            const duration = 1500;
+            const start = performance.now();
+            const suffix = el.dataset.suffix || '';
+            const update = (now) => {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(eased * target) + suffix;
+                if (progress < 1) requestAnimationFrame(update);
+            };
+            requestAnimationFrame(update);
+            statsObserver.unobserve(el);
+        }
+    });
+}, { threshold: 0.1 });
+stats.forEach(s => statsObserver.observe(s));
+setTimeout(() => {
+    stats.forEach(s => {
+        if (!s.dataset.animated) {
+            s.textContent = s.dataset.target + (s.dataset.suffix || '');
+            s.dataset.animated = 'true';
+        }
+    });
+}, 2000);
+
+// Header scroll
+const header = document.getElementById('header');
+let ticking = false;
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            header.classList.toggle('scrolled', window.scrollY > 40);
+            ticking = false;
+        });
+        ticking = true;
+    }
+}, { passive: true });
+
+// Cursor glow
+const cursor = document.createElement('div');
+cursor.className = 'cursor-glow';
+document.body.appendChild(cursor);
+document.addEventListener('mousemove', (e) => {
+    cursor.style.transform = `translate(${e.clientX - 400}px, ${e.clientY - 400}px)`;
+});
+
+// 3D tilt на карточках
+document.querySelectorAll('.card, .fintech-card, .sec-card, .case-card, .demo-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        const rx = ((y - cy) / cy) * -12;
+        const ry = ((x - cx) / cx) * 12;
+        card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+    });
+});
+
+// Modal
+const modal = document.getElementById('demoModal');
+const modalClose = document.getElementById('modalClose');
+function openModal() { modal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeModal() { modal.classList.remove('open'); document.body.style.overflow = ''; }
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+// Demo card admin buttons
+document.querySelectorAll('.btn-admin').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const product = btn.dataset.product;
+        const select = document.getElementById('demoModal').querySelector('select[name="product"]');
+        if (product && select) select.value = product;
+        openModal();
+    });
+});
+
+// Form submit
+document.getElementById('demoForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button');
+    const data = new FormData(form);
+    const subject = 'Заявка с axiiom.ru: ' + (data.get('product') || 'демо-доступ');
+    const body = [
+        'Имя: ' + (data.get('name') || '—'),
+        'Email: ' + (data.get('email') || '—'),
+        'Компания: ' + (data.get('company') || '—'),
+        'Телефон: ' + (data.get('phone') || '—'),
+        'Продукт: ' + (data.get('product') || '—'),
+        '',
+        '—',
+        'Заявка с сайта axiiom.ru'
+    ].join('\n');
+
+    btn.textContent = 'Отправлено!';
+    btn.style.background = 'var(--clr-accent2)';
+    btn.disabled = true;
+
+    ym(109391253, 'reachGoal', 'form_demo');
+    gtag('event', 'form_demo');
+
+    window.location.href = 'mailto:hello@axiiom.ru?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+    setTimeout(function() { btn.textContent = 'Отправить заявку'; btn.style.background = ''; btn.disabled = false; closeModal(); }, 2000);
+});
+
+</script>
+<script src="/nav.js"></script>
+<script>Nav.init({ cta: true, breadcrumbs: false });</script>
+<script src="/theme.js"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109391253', 'ym');
+
+    ym(109391253, 'init', {clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109391253" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HFS4BDGTV4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HFS4BDGTV4');
+</script>
+
+  <script src="/preloader.js"></script>
+
+<script>
+(function() {
+  var t = document.getElementById('navToggle');
+  var o = document.getElementById('navOverlay');
+  if (!t || !o) return;
+  t.addEventListener('click', function(e) {
+    e.stopPropagation();
+    o.classList.toggle('open');
+    t.classList.toggle('active');
+    document.body.style.overflow = o.classList.contains('open') ? 'hidden' : '';
+  });
+})();
+</script>
+</body>
+</html>

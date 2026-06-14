@@ -1,0 +1,380 @@
+(function(w, d) {
+  'use strict';
+
+  var TREE = [
+    {
+      name: 'Главная',
+      path: '/',
+      children: [
+        { name: 'Услуги', path: '/#services' },
+        { name: 'Проблемы', path: '/#problems' },
+        { name: 'Кейсы', path: '/#cases' },
+        { name: 'Процесс', path: '/#process' },
+        { name: 'Технологии', path: '/#stack' },
+        { name: 'Интеграции', path: '/#integrations' },
+        { name: 'Демо', path: '/#demos' },
+        { name: 'FAQ', path: '/#faq' }
+      ]
+    },
+    {
+      name: 'Отраслевые решения',
+      path: '/industries/',
+      children: [
+        { name: 'Автоматизация ресторанов', path: '/industries/avtomatizaciya-restoranov.html' },
+        { name: 'ПО для строительных компаний', path: '/industries/po-stroitelnye-kompanii.html' },
+        { name: 'CRM для медицинских центров', path: '/industries/crm-medcentry.html' },
+        { name: 'Системы для логистики и грузоперевозок', path: '/industries/sistemy-logistika.html' },
+        { name: 'SaaS для стартапов', path: '/industries/saas-startupy.html' },
+        { name: 'ERP для производства', path: '/industries/erp-proizvodstvo.html' },
+        { name: 'Системы учета для сельского хозяйства', path: '/industries/selskokhozyaystvo.html' },
+        { name: 'Мобильные приложения для фитнеса', path: '/industries/fitness-apps.html' },
+        { name: 'Платформы для онлайн-обучения', path: '/industries/online-obuchenie.html' },
+        { name: 'Системы бронирования для гостиниц', path: '/industries/bronirovanie-gostinits.html' },
+        { name: 'CRM для недвижимости', path: '/industries/crm-nedvizhimost.html' },
+        { name: 'Инструменты для удаленной работы', path: '/industries/udalennaya-rabota.html' },
+        { name: 'Аналитика для маркетинга', path: '/industries/marketing-analitika.html' },
+        { name: 'Кибербезопасность для малого бизнеса', path: '/industries/kiberbezopasnost.html' },
+        { name: 'Системы управления проектами', path: '/industries/upravlenie-proektami.html' },
+        { name: 'Платформы для фриланса', path: '/industries/platforma-frilans.html' },
+        { name: 'IoT для умного дома', path: '/industries/iot-umnyy-dom.html' },
+        { name: 'Платформы для краудфандинга', path: '/industries/kraudfanding.html' },
+        { name: 'Системы управления цепочками поставок', path: '/industries/upravlenie-cepochkami.html' },
+        { name: 'ПО для юридических фирм', path: '/industries/pravovie-firmu.html' },
+        { name: 'ПО для автосервиса', path: '/industries/avtoservice.html' },
+        { name: 'Платформы для доставки еды', path: '/industries/dostavka-ed%D1%8B.html' }
+      ]
+    },
+    {
+      name: 'Блог',
+      path: '/blog/',
+      children: [
+        { name: 'Архитектура highload-систем', path: '/blog/highload-architecture/' },
+        { name: 'PCI DSS Compliance', path: '/blog/pci-dss-compliance/' },
+        { name: 'Тренды финтеха 2026', path: '/blog/fintech-trends-2026/' },
+        { name: 'ROI платформы лояльности', path: '/blog/loyalty-program-roi/' },
+        { name: '161-ФЗ: руководство для стартапов', path: '/blog/161-fz-guideline/' },
+        { name: 'UX платёжных мобильных приложений', path: '/blog/mobile-payment-ux/' },
+        { name: 'Платформа лояльности — необходимость', path: '/blog/loyalty-platform-not-option-necessity/' }
+      ]
+    },
+    {
+      name: 'Инструменты',
+      path: '/tools/',
+      children: [
+        { name: 'Счётчик символов', path: '/tools/char-counter/' },
+        { name: 'Генератор паролей', path: '/tools/password-gen/' },
+        { name: 'Транслитератор', path: '/tools/translit/' },
+        { name: 'Base64', path: '/tools/base64/' },
+        { name: 'URL Encode', path: '/tools/url-encode/' },
+        { name: 'Lorem Ipsum', path: '/tools/lorem-ipsum/' },
+        { name: 'Color Picker', path: '/tools/color-picker/' },
+        { name: 'Конвертер валют', path: '/tools/currency/' },
+        { name: 'Калькулятор дат', path: '/tools/date-calc/' },
+        { name: 'Конвертер единиц', path: '/tools/unit-converter/' },
+        { name: 'SEO Сниппет', path: '/tools/snippet-gen/' },
+        { name: 'Чек-листы', path: '/tools/checklist/' }
+      ]
+    },
+    { name: 'Калькулятор', path: '/calculator/' },
+    {
+      name: 'Демо-платформы',
+      path: '/demo/app/',
+      children: [
+        { name: 'PadelPro', path: 'https://bestdeejay-design.github.io/padl/' },
+        { name: 'Каталог заведений', path: 'https://bestdeejay-design.github.io/catalog/' },
+        { name: 'Grand Hotel', path: 'https://bestdeejay-design.github.io/booking/' },
+        { name: 'Lovii — веб-приложение', path: 'https://web-test.lovii.ru/' },
+        { name: 'Lovii — B2B-портал', path: 'https://b2b-test.lovii.ru/' },
+        { name: 'Lovii — Админ-панель', path: 'https://admin-test.lovii.ru/' },
+        { name: 'AMBAR', path: 'https://bestdeejay-design.github.io/ambar/' },
+        { name: 'University Portal', path: '/demo/app/demo-template/' },
+        { name: 'UniverID', path: 'https://univerid.ru/' },
+        { name: 'Foodie', path: 'https://bestdeejay-design.github.io/foodie/' },
+        { name: 'Lovii Demo — мобильная', path: 'https://lovii.mobiap.com/mobile.html' },
+        { name: 'eSIM Travel', path: 'https://bestdeejay-design.github.io/mvno/' },
+        { name: 'AXIIOM Logistics', path: 'https://bestdeejay-design.github.io/logistics/' },
+        { name: 'HR Motivation', path: 'https://bestdeejay-design.github.io/hrmodule/' },
+        { name: 'Мобильная касса', path: 'https://bestdeejay-design.github.io/cashier/' },
+        { name: 'Primary — Премиум такси', path: 'https://bestdeejay-design.github.io/primary/' },
+        { name: 'Alfred', path: 'https://bestdeejay-design.github.io/alfred/' },
+        { name: 'Qbik', path: 'https://bestdeejay-design.github.io/qbik/' },
+        { name: 'Код Доступа', path: 'https://bestdeejay-design.github.io/kodstudy/' },
+        { name: 'DAJET', path: 'https://dajet.ru/' },
+        { name: 'Hype', path: 'https://hype-marketplace-1.web.app/' }
+      ]
+    },
+    { name: 'Контакты', path: '/#contact' },
+    { name: 'Политика конфиденциальности', path: '/privacy/', footerOnly: true },
+    { name: 'Пользовательское соглашение', path: '/terms/', footerOnly: true }
+  ];
+
+  function $(id) { return d.getElementById(id); }
+
+  function el(tag, attrs, children) {
+    var e = d.createElement(tag);
+    if (attrs) for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (children) for (var i = 0; i < children.length; i++) e.appendChild(children[i]);
+    return e;
+  }
+
+  function tx(text) { return d.createTextNode(text); }
+
+  var Nav = {
+    opts: {},
+    currentPath: '',
+
+    init: function(options) {
+      this.opts = { cta: true, breadcrumbs: true };
+      if (options) for (var k in options) this.opts[k] = options[k];
+
+      this.currentPath = this._normalizePath(w.location.pathname);
+
+      this._renderDesktop();
+      this._renderMobile();
+      this._renderFooter();
+      if (this.opts.breadcrumbs) this._renderBreadcrumbs();
+      this._toggleCta();
+      this._initEvents();
+    },
+
+    _normalizePath: function(p) {
+      if (p.indexOf('/index.html') > 0) p = p.replace('/index.html', '');
+      if (p.length > 1 && p.charAt(p.length - 1) === '/') p = p.slice(0, -1);
+      if (p === '') p = '/';
+      return p;
+    },
+
+    _pathMatch: function(nodePath, urlPath) {
+      var a = nodePath;
+      if (a.length > 1 && a.charAt(a.length - 1) === '/') a = a.slice(0, -1);
+      var b = urlPath;
+      if (b.length > 1 && b.charAt(b.length - 1) === '/') b = b.slice(0, -1);
+      return a === b;
+    },
+
+    _activeSection: function() {
+      var path = this.currentPath;
+      if (path === '/') return null;
+
+      var candidates = [];
+      for (var i = 0; i < TREE.length; i++) {
+        var n = TREE[i];
+        if (n.footerOnly) continue;
+        var base = n.path;
+        if (base.length > 1 && base.charAt(base.length - 1) === '/') base = base.slice(0, -1);
+        if (path === base || path.indexOf(base + '/') === 0 || path.indexOf(base + '.') === 0) {
+          candidates.push({ node: n, baseLen: base.length });
+        }
+      }
+      candidates.sort(function(a, b) { return b.baseLen - a.baseLen; });
+      return candidates.length > 0 ? candidates[0].node : null;
+    },
+
+    _findNode: function(path) {
+      for (var i = 0; i < TREE.length; i++) {
+        var n = TREE[i];
+        if (this._pathMatch(n.path, path)) return { node: n, parents: [] };
+        if (n.children) {
+          for (var j = 0; j < n.children.length; j++) {
+            if (this._pathMatch(n.children[j].path, path)) {
+              return { node: n.children[j], parents: [n] };
+            }
+          }
+        }
+      }
+      return null;
+    },
+
+    _hasHash: function(p) {
+      return p.indexOf('#') !== -1;
+    },
+
+    _renderDesktop: function() {
+      var container = $('desktopNav');
+      if (!container) return;
+
+      var active = this._activeSection();
+
+      for (var i = 0; i < TREE.length; i++) {
+        var n = TREE[i];
+        if (n.footerOnly) continue;
+        if (n.path.indexOf('#') !== -1) continue;
+
+        var link = el('a', { href: n.path }, [tx(n.name)]);
+        if (active && n.path === active.path) link.className = 'nav-active';
+
+        var li = el('li', {}, [link]);
+
+        if (n.children && n.children.length > 0) {
+          li.className = 'nav-has-dropdown';
+          var dd = el('ul', { 'class': 'nav-dropdown' });
+          for (var j = 0; j < n.children.length; j++) {
+            var cl = el('a', { href: n.children[j].path }, [tx(n.children[j].name)]);
+            dd.appendChild(el('li', {}, [cl]));
+          }
+          li.appendChild(dd);
+        }
+
+        container.appendChild(li);
+      }
+    },
+
+    _renderMobile: function() {
+      var container = $('mobileNav');
+      if (!container) return;
+      var self = this;
+
+      function renderNode(node) {
+        var link = el('a', { href: node.path }, [tx(node.name)]);
+        var match = self._activeSection();
+        if (match && node.path === match.path) link.className = 'nav-active';
+        if (!match && self._pathMatch(node.path, self.currentPath)) link.className = 'nav-active';
+
+        var li = el('li', {}, [link]);
+
+        if (node.children && node.children.length > 0) {
+          li.className = 'nav-has-children';
+          var btn = el('button', { 'class': 'nav-expand', 'aria-label': '\u0420\u0430\u0437\u0432\u0435\u0440\u043D\u0443\u0442\u044C' }, [tx('+')]);
+          li.appendChild(btn);
+          var sub = el('ul', { 'class': 'nav-sub' });
+          for (var i = 0; i < node.children.length; i++) {
+            sub.appendChild(renderNode(node.children[i]));
+          }
+          li.appendChild(sub);
+        }
+
+        return li;
+      }
+
+      for (var i = 0; i < TREE.length; i++) {
+        if (TREE[i].footerOnly) continue;
+        container.appendChild(renderNode(TREE[i]));
+      }
+    },
+
+    _renderBreadcrumbs: function() {
+      var container = $('breadcrumbs');
+      if (!container) return;
+
+      var html = '<div class="container"><ol itemscope itemtype="https://schema.org/BreadcrumbList">';
+      html += this._bcItem('\u0413\u043B\u0430\u0432\u043D\u0430\u044F', '/', 1);
+
+      var match = this._findNode(this.currentPath);
+      if (match) {
+        var pos = 2;
+        for (var i = 0; i < match.parents.length; i++) {
+          html += this._bcItem(match.parents[i].name, match.parents[i].path, pos++);
+        }
+        html += this._bcItemCurrent(match.node.name, pos);
+      } else {
+        html += this._bcItemCurrent('\u0421\u0442\u0440\u0430\u043D\u0438\u0446\u0430', 2);
+      }
+
+      html += '</ol></div>';
+      container.innerHTML = html;
+    },
+
+    _bcItem: function(name, href, pos) {
+      return '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">' +
+        '<a itemprop="item" href="' + href + '"><span itemprop="name">' + name + '</span></a>' +
+        '<meta itemprop="position" content="' + pos + '"></li>';
+    },
+
+    _bcItemCurrent: function(name, pos) {
+      return '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">' +
+        '<span itemprop="name">' + name + '</span>' +
+        '<meta itemprop="position" content="' + pos + '"></li>';
+    },
+
+    _renderFooter: function() {
+      var container = $('footerCopy');
+      if (!container) return;
+
+      var mainLinks = [];
+      var legalLinks = [];
+      for (var i = 0; i < TREE.length; i++) {
+        var n = TREE[i];
+        if (n.footerOnly) { legalLinks.push(n); }
+        else if (!this._hasHash(n.path)) { mainLinks.push(n); }
+      }
+
+      var html = '<p class="copy">';
+      for (var i = 0; i < mainLinks.length; i++) {
+        if (i > 0) html += ' \u00B7 ';
+        var name = mainLinks[i].path === '/' ? '\u0410\u041A\u0421\u0418\u041E\u041C\u0410' : mainLinks[i].name;
+        html += '<a href="' + mainLinks[i].path + '" class="footer-link">' + name + '</a>';
+      }
+      html += '</p>';
+
+      if (legalLinks.length > 0) {
+        html += '<p class="copy" style="font-size:.7rem;margin-top:8px;border:none;padding-top:0;">';
+        for (var i = 0; i < legalLinks.length; i++) {
+          if (i > 0) html += ' \u00B7 ';
+          html += '<a href="' + legalLinks[i].path + '" class="footer-link">' + legalLinks[i].name + '</a>';
+        }
+        html += '</p>';
+      }
+
+      var year = new Date().getFullYear();
+      html += '<p class="copy" style="font-size:.65rem;margin-top:8px;border:none;padding-top:0;text-transform:none;letter-spacing:0;">' +
+        '\u00A9 2024\u2013' + year + ' AXIIOM (\u041E\u041E\u041E \u0410\u043A\u0441\u0438\u043E\u043C\u0430). \u0412\u0441\u0435 \u043F\u0440\u0430\u0432\u0430 \u0437\u0430\u0449\u0438\u0449\u0435\u043D\u044B.' +
+      '</p>';
+
+      container.innerHTML = html;
+    },
+
+    _toggleCta: function() {
+      var cta = $('ctaBtn');
+      if (cta) cta.style.display = this.opts.cta ? '' : 'none';
+    },
+
+    _initEvents: function() {
+      var overlay = $('navOverlay');
+      var toggle = $('navToggle');
+
+      if (overlay) {
+        overlay.addEventListener('click', function(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('open');
+            if (toggle) toggle.classList.remove('active');
+            d.body.style.overflow = '';
+          }
+        });
+
+        overlay.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            var li = this.parentNode;
+            if (li && li.classList.contains('nav-has-children')) {
+              e.preventDefault();
+              var btn = li.querySelector('.nav-expand');
+              li.classList.toggle('nav-expanded');
+              if (btn) btn.textContent = li.classList.contains('nav-expanded') ? '\u2212' : '+';
+              return;
+            }
+            overlay.classList.remove('open');
+            if (toggle) toggle.classList.remove('active');
+            d.body.style.overflow = '';
+          });
+        });
+
+        overlay.querySelectorAll('.nav-expand').forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var p = btn.parentNode;
+            p.classList.toggle('nav-expanded');
+            btn.textContent = p.classList.contains('nav-expanded') ? '\u2212' : '+';
+          });
+        });
+      }
+
+      var header = $('header');
+      if (header) {
+        w.addEventListener('scroll', function() {
+          header.classList.toggle('scrolled', w.scrollY > 40);
+        }, { passive: true });
+      }
+    }
+  };
+
+  w.Nav = Nav;
+})(window, document);
