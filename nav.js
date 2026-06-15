@@ -80,41 +80,54 @@
       name: 'Демо-платформы',
       path: '/demo/app/',
       children: [
+        { header: true, name: 'AXIIOM Fintech Demo' },
         { name: 'Платежный шлюз', path: '/demo/app/payment-gateway/' },
         { name: 'Программа лояльности', path: '/demo/app/loyalty-program/' },
         { name: 'Кредитный конвейер', path: '/demo/app/credit-conveyor/' },
         { name: 'Маркетплейс', path: '/demo/app/marketplace/' },
-        { name: 'Платежный терминал', path: '/demo/app/payment-terminal/' },
-        { name: 'Чат-бот техподдержки', path: '/demo/app/chatbot-support/' },
-        { name: 'Аналитическая панель', path: '/demo/app/analytics-dashboard/' },
-        { name: 'Мониторинг инцидентов', path: '/demo/app/incident-monitoring/' },
-        { name: 'Онбординг пользователей', path: '/demo/app/user-onboarding/' },
-        { name: 'Витрина в Telegram', path: '/demo/app/telegram-storefront/' },
-        { name: 'Система лояльности', path: '/demo/app/loyalty-system/' },
         { name: 'Финтех-конструктор', path: '/demo/app/fintech-constructor/' },
-        { name: 'Портфель проектов', path: '/demo/app/project-portfolio/' },
         { name: 'Платежная страница', path: '/demo/app/payment-page/' },
-        { name: 'PadelPro', path: 'https://bestdeejay-design.github.io/padl/' },
-        { name: 'Каталог заведений', path: 'https://bestdeejay-design.github.io/catalog/' },
-        { name: 'Grand Hotel', path: 'https://bestdeejay-design.github.io/booking/' },
+        { separator: true },
+        { header: true, name: 'Платежи и терминалы' },
+        { name: 'Платежный терминал', path: '/demo/app/payment-terminal/' },
+        { name: 'Платежный шлюз', path: '/demo/app/payment-gateway/' },
+        { name: 'Мобильная касса', path: 'https://bestdeejay-design.github.io/cashier/' },
+        { separator: true },
+        { header: true, name: 'Лояльность и клиенты' },
+        { name: 'Программа лояльности', path: '/demo/app/loyalty-program/' },
+        { name: 'Система лояльности', path: '/demo/app/loyalty-system/' },
         { name: 'Lovii — веб-приложение', path: 'https://web-test.lovii.ru/' },
         { name: 'Lovii — B2B-портал', path: 'https://b2b-test.lovii.ru/' },
         { name: 'Lovii — Админ-панель', path: 'https://admin-test.lovii.ru/' },
-        { name: 'AMBAR', path: 'https://bestdeejay-design.github.io/ambar/' },
+        { name: 'Lovii Demo — мобильная', path: 'https://lovii.mobiap.com/mobile.html' },
+        { separator: true },
+        { header: true, name: 'Аналитика и мониторинг' },
+        { name: 'Аналитическая панель', path: '/demo/app/analytics-dashboard/' },
+        { name: 'Мониторинг инцидентов', path: '/demo/app/incident-monitoring/' },
+        { name: 'Портфель проектов', path: '/demo/app/project-portfolio/' },
+        { separator: true },
+        { header: true, name: 'Коммуникации и сервисы' },
+        { name: 'Чат-бот техподдержки', path: '/demo/app/chatbot-support/' },
+        { name: 'Витрина в Telegram', path: '/demo/app/telegram-storefront/' },
+        { name: 'Онбординг пользователей', path: '/demo/app/user-onboarding/' },
+        { separator: true },
+        { header: true, name: 'Готовые проекты' },
+        { name: 'PadelPro', path: 'https://bestdeejay-design.github.io/padl/' },
+        { name: 'Каталог заведений', path: 'https://bestdeejay-design.github.io/catalog/' },
+        { name: 'Grand Hotel', path: 'https://bestdeejay-design.github.io/booking/' },
         { name: 'University Portal', path: '/demo/app/demo-template/' },
         { name: 'UniverID', path: 'https://univerid.ru/' },
         { name: 'Foodie', path: 'https://bestdeejay-design.github.io/foodie/' },
-        { name: 'Lovii Demo — мобильная', path: 'https://lovii.mobiap.com/mobile.html' },
         { name: 'eSIM Travel', path: 'https://bestdeejay-design.github.io/mvno/' },
         { name: 'AXIIOM Logistics', path: 'https://bestdeejay-design.github.io/logistics/' },
         { name: 'HR Motivation', path: 'https://bestdeejay-design.github.io/hrmodule/' },
-        { name: 'Мобильная касса', path: 'https://bestdeejay-design.github.io/cashier/' },
         { name: 'Primary — Премиум такси', path: 'https://bestdeejay-design.github.io/primary/' },
         { name: 'Alfred', path: 'https://bestdeejay-design.github.io/alfred/' },
         { name: 'Qbik', path: 'https://bestdeejay-design.github.io/qbik/' },
         { name: 'Код Доступа', path: 'https://bestdeejay-design.github.io/kodstudy/' },
         { name: 'DAJET', path: 'https://dajet.ru/' },
-        { name: 'Hype', path: 'https://hype-marketplace-1.web.app/' }
+        { name: 'Hype', path: 'https://hype-marketplace-1.web.app/' },
+        { name: 'AMBAR', path: 'https://bestdeejay-design.github.io/ambar/' }
       ]
     },
     { name: 'Контакты', path: '/#contact' },
@@ -223,8 +236,15 @@
           li.className = 'nav-has-dropdown';
           var dd = el('ul', { 'class': 'nav-dropdown' });
           for (var j = 0; j < n.children.length; j++) {
-            var cl = el('a', { href: n.children[j].path }, [tx(n.children[j].name)]);
-            dd.appendChild(el('li', {}, [cl]));
+            var ch = n.children[j];
+            if (ch.separator) {
+              dd.appendChild(el('li', { 'class': 'nav-dropdown-sep' }));
+            } else if (ch.header) {
+              dd.appendChild(el('li', { 'class': 'nav-dropdown-hdr' }, [el('span', {}, [tx(ch.name)])]));
+            } else {
+              var cl = el('a', { href: ch.path }, [tx(ch.name)]);
+              dd.appendChild(el('li', {}, [cl]));
+            }
           }
           li.appendChild(dd);
         }
@@ -252,7 +272,14 @@
           li.appendChild(btn);
           var sub = el('ul', { 'class': 'nav-sub' });
           for (var i = 0; i < node.children.length; i++) {
-            sub.appendChild(renderNode(node.children[i]));
+            var ch2 = node.children[i];
+            if (ch2.separator) {
+              sub.appendChild(el('li', { 'class': 'nav-sub-sep' }));
+            } else if (ch2.header) {
+              sub.appendChild(el('li', { 'class': 'nav-sub-hdr' }, [el('span', {}, [tx(ch2.name)])]));
+            } else {
+              sub.appendChild(renderNode(ch2));
+            }
           }
           li.appendChild(sub);
         }
