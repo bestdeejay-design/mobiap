@@ -144,9 +144,9 @@ window.location.href = payment.paymentUrl;""",
 </style>
 <script>(function(){
 function fm(id,fn){var el=document.getElementById('w1'+id);if(el)el.addEventListener('input',fn)}
-fm('n',function(e){e.target.value=e.target.value.replace(/\D/g,'').replace(/(.{4})/g,'$1 ').trim()});
-fm('e',function(e){var v=e.target.value.replace(/[^\d\/]/g,'');if(v.length===2&&!v.includes('/'))v=v+' / ';e.target.value=v});
-fm('c',function(e){e.target.value=e.target.value.replace(/\D/g,'')});
+fm('n',function(e){e.target.value=e.target.value.replace(/\\D/g,'').replace(/(.{4})/g,'$1 ').trim()});
+fm('e',function(e){var v=e.target.value.replace(/[^\\d\\/]/g,'');if(v.length===2&&!v.includes('/'))v=v+' / ';e.target.value=v});
+fm('c',function(e){e.target.value=e.target.value.replace(/\\D/g,'')});
 document.getElementById('w1b').addEventListener('click',function(){var b=this,x=document.getElementById('w1x'),sp=document.getElementById('w1sp'),ok=document.getElementById('w1ok');b.style.display='none';x.style.display='block';sp.style.display='block';ok.style.display='none';setTimeout(function(){sp.style.display='none';ok.style.display='flex'},1800)});
 })();</script>""",
         "widget_css": "",
@@ -951,7 +951,7 @@ const route = await checkout.smartRoute({
 </style>
 <script>
 (function(){
-document.getElementById('pp-card').addEventListener('input',function(e){e.target.value=e.target.value.replace(/\D/g,'').replace(/(.{4})/g,'$1 ').trim();});
+document.getElementById('pp-card').addEventListener('input',function(e){e.target.value=e.target.value.replace(/\\D/g,'').replace(/(.{4})/g,'$1 ').trim();});
 document.getElementById('pp-btn').addEventListener('click',function(){document.getElementById('pp-modal').style.display='flex';});
 document.getElementById('pp-confirm').addEventListener('click',function(){document.getElementById('pp-modal').style.display='none';document.getElementById('pp-ok').style.display='flex';var b=document.getElementById('pp-btn');b.textContent='✓ Оплачено';b.disabled=1;b.style.cursor='default';b.style.transform='none'});
 document.getElementById('pp-cancel').addEventListener('click',function(){document.getElementById('pp-modal').style.display='none';});
