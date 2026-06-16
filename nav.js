@@ -388,8 +388,22 @@
             if (li && li.classList.contains('nav-has-children')) {
               e.preventDefault();
               var btn = li.querySelector('.nav-expand');
+              var sub = li.querySelector('.nav-sub');
+              var isExpanding = !li.classList.contains('nav-expanded');
+              if (sub) {
+                if (isExpanding) {
+                  var prev = sub.style.maxHeight;
+                  sub.style.maxHeight = 'none';
+                  var h = sub.scrollHeight;
+                  sub.style.maxHeight = prev || '0';
+                  sub.offsetHeight;
+                  sub.style.maxHeight = h + 'px';
+                } else {
+                  sub.style.maxHeight = '0';
+                }
+              }
               li.classList.toggle('nav-expanded');
-              if (btn) btn.textContent = li.classList.contains('nav-expanded') ? '\u2212' : '+';
+              if (btn) btn.textContent = isExpanding ? '\u2212' : '+';
               return;
             }
             overlay.classList.remove('open');
@@ -402,8 +416,22 @@
           btn.addEventListener('click', function(e) {
             e.stopPropagation();
             var p = btn.parentNode;
+            var sub = p.querySelector('.nav-sub');
+            var isExpanding = !p.classList.contains('nav-expanded');
+            if (sub) {
+              if (isExpanding) {
+                var prev = sub.style.maxHeight;
+                sub.style.maxHeight = 'none';
+                var h = sub.scrollHeight;
+                sub.style.maxHeight = prev || '0';
+                sub.offsetHeight;
+                sub.style.maxHeight = h + 'px';
+              } else {
+                sub.style.maxHeight = '0';
+              }
+            }
             p.classList.toggle('nav-expanded');
-            btn.textContent = p.classList.contains('nav-expanded') ? '\u2212' : '+';
+            btn.textContent = isExpanding ? '\u2212' : '+';
           });
         });
       }

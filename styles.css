@@ -396,7 +396,7 @@ a.logo:hover::after { width: 100%; }
 }
 
 .nav-expanded > .nav-sub {
-    max-height: 800px;
+    max-height: 3000px;
 }
 
 .nav-sub a {
