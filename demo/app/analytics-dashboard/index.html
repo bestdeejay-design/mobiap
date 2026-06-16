@@ -176,7 +176,7 @@
     </div>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.an-c{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;padding:14px;text-align:center}.an-l{font-size:12px;color:var(--clr-muted);margin-bottom:4px;font-weight:500}.an-v{font-size:22px;font-weight:700;color:var(--clr-heading);font-variant-numeric:tabular-nums}.an-bar{flex:1;background:linear-gradient(to top,var(--clr-accent),transparent);border-radius:3px 3px 0 0;min-height:8px;opacity:.7;transition:height .5s}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.an-c{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;padding:14px;text-align:center}.an-l{font-size:12px;color:var(--clr-muted);margin-bottom:4px;font-weight:500}.an-v{font-size:22px;font-weight:700;color:var(--clr-heading);font-variant-numeric:tabular-nums}.an-bar{flex:1;background:linear-gradient(to top,var(--clr-accent),transparent);border-radius:3px 3px 0 0;min-height:8px;opacity:.7;transition:height .5s}@media(min-width:768px){.dw{max-width:640px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){function an(e,v){var el=document.getElementById(e),s=0,i=setInterval(function(){s++;var d=Math.round(v*s/60);el.textContent=d+(e==='an-ltv'?' ₽':e==='an-conv'?'.'+(d%10)+'%':'');if(s>=60){clearInterval(i);el.textContent=v+(e==='an-ltv'?' ₽':e==='an-conv'?'.'+String(v).split('.')[1]+'%':'')}},20)}an('an-dau',12450);an('an-mau',45200);an('an-ltv',12500);setTimeout(function(){an('an-conv',32)},200);})();</script>
   </div>
 </section>
@@ -274,6 +274,7 @@ var ro = new IntersectionObserver(function(e) {
 reveals.forEach(function(r) { ro.observe(r); });
 </script>
 
+<script src="/config.js"></script>
 <script src="/nav.js"></script>
 <script>Nav.init({ cta: true, breadcrumbs: true });</script>
 <script src="/theme.js"></script>

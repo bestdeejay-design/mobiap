@@ -181,7 +181,7 @@
     </div>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-btn{padding:12px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}.dw-btn:hover{opacity:.85}.dw-sp{width:28px;height:28px;border:2px solid var(--clr-border);border-top-color:var(--clr-accent);border-radius:50%;animation:dws .7s linear infinite;margin:0 auto}.pt-k{padding:14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:20px;font-weight:600;cursor:pointer;transition:all .15s;text-align:center}.pt-k:hover{background:var(--clr-surface);border-color:var(--clr-accent)}.pt-k:active{transform:scale(.95)}.pt-clr{color:#e17055;border-color:#e1705544}@keyframes dws{to{transform:rotate(360deg)}}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-btn{padding:12px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}.dw-btn:hover{opacity:.85}.dw-sp{width:28px;height:28px;border:2px solid var(--clr-border);border-top-color:var(--clr-accent);border-radius:50%;animation:dws .7s linear infinite;margin:0 auto}.pt-k{padding:14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:20px;font-weight:600;cursor:pointer;transition:all .15s;text-align:center}.pt-k:hover{background:var(--clr-surface);border-color:var(--clr-accent)}.pt-k:active{transform:scale(.95)}.pt-clr{color:#e17055;border-color:#e1705544}@keyframes dws{to{transform:rotate(360deg)}}@media(min-width:768px){.dw{max-width:400px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){var amt=0,e=document.getElementById('pt-amt'),b=document.getElementById('pt-pay'),st=document.getElementById('pt-st'),sp=document.getElementById('pt-sp'),ok=document.getElementById('pt-ok');document.querySelectorAll('.pt-k').forEach(function(k){k.addEventListener('click',function(){if(this.id==='pt-clr'){amt=0}else{var v=this.dataset.v;amt=amt*100+parseInt(v)}e.textContent=Math.round(amt).toLocaleString('ru')+' ₽'});});b.addEventListener('click',function(){if(amt<=0)return;b.style.display='none';st.style.display='block';sp.style.display='block';ok.style.display='none';setTimeout(function(){sp.style.display='none';ok.style.display='block'},1500);});})();</script>
   </div>
 </section>
@@ -282,6 +282,7 @@ var ro = new IntersectionObserver(function(e) {
 reveals.forEach(function(r) { ro.observe(r); });
 </script>
 
+<script src="/config.js"></script>
 <script src="/nav.js"></script>
 <script>Nav.init({ cta: true, breadcrumbs: true });</script>
 <script src="/theme.js"></script>

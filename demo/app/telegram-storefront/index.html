@@ -176,7 +176,7 @@
     </div>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.ts-c{display:flex;align-items:center;gap:10px;padding:8px;background:var(--clr-bg);border-radius:10px;border:1px solid var(--clr-border)}.ts-b{padding:6px 14px;background:var(--clr-accent);border:none;border-radius:8px;color:#fff;font-size:12px;font-weight:600;cursor:pointer;transition:opacity .2s;white-space:nowrap}.ts-b:hover{opacity:.85}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.ts-c{display:flex;align-items:center;gap:10px;padding:8px;background:var(--clr-bg);border-radius:10px;border:1px solid var(--clr-border)}.ts-b{padding:6px 14px;background:var(--clr-accent);border:none;border-radius:8px;color:#fff;font-size:12px;font-weight:600;cursor:pointer;transition:opacity .2s;white-space:nowrap}.ts-b:hover{opacity:.85}@media(min-width:768px){.dw{max-width:400px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){var tc=0,tt=0,ce=document.getElementById('ts-cnt'),te=document.getElementById('ts-tot');document.querySelectorAll('.ts-b').forEach(function(b,i){var ps=[79990,14990,49990];b.addEventListener('click',function(){tc++;tt+=ps[i];ce.textContent=tc;te.textContent=tt.toLocaleString('ru')+' ₽';var t=this;t.textContent='✓';setTimeout(function(){t.textContent='Купить'},1000);});});})();</script>
   </div>
 </section>
@@ -280,6 +280,7 @@ var ro = new IntersectionObserver(function(e) {
 reveals.forEach(function(r) { ro.observe(r); });
 </script>
 
+<script src="/config.js"></script>
 <script src="/nav.js"></script>
 <script>Nav.init({ cta: true, breadcrumbs: true });</script>
 <script src="/theme.js"></script>

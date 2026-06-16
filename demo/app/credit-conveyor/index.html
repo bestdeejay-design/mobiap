@@ -174,7 +174,7 @@
     <div style="display:flex;align-items:center;justify-content:center;gap:8px;color:#00b894;font-weight:600;font-size:14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00b894" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Предварительное одобрение</div>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-b{display:flex;flex-direction:column;gap:10px}.dw-f{display:flex;flex-direction:column;gap:3px}.dw-l{font-size:13px;color:var(--clr-text);font-weight:500}.dw-i{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:14px;box-sizing:border-box}.dw-i[type=range]{border:none;background:none;padding:4px 0}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-b{display:flex;flex-direction:column;gap:10px}.dw-f{display:flex;flex-direction:column;gap:3px}.dw-l{font-size:13px;color:var(--clr-text);font-weight:500}.dw-i{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:14px;box-sizing:border-box}.dw-i[type=range]{border:none;background:none;padding:4px 0}@media(min-width:768px){.dw{max-width:520px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){var as=document.getElementById('cc-as'),ts=document.getElementById('cc-ts'),pm=document.getElementById('cc-pm'),ae=document.getElementById('cc-a'),te=document.getElementById('cc-t');function calc(){var a=parseFloat(as.value),t=parseInt(ts.value),r=0.129/12;if(r===0){pm.textContent=Math.round(a/t).toLocaleString('ru')+' ₽'}else{var mp=a*r*Math.pow(1+r,t)/(Math.pow(1+r,t)-1);pm.textContent=Math.round(mp).toLocaleString('ru')+' ₽'}ae.textContent=Math.round(a).toLocaleString('ru');te.textContent=t}as.addEventListener('input',calc);ts.addEventListener('input',calc);calc()})();</script>
   </div>
 </section>
@@ -272,6 +272,7 @@ var ro = new IntersectionObserver(function(e) {
 reveals.forEach(function(r) { ro.observe(r); });
 </script>
 
+<script src="/config.js"></script>
 <script src="/nav.js"></script>
 <script>Nav.init({ cta: true, breadcrumbs: true });</script>
 <script src="/theme.js"></script>

@@ -191,7 +191,7 @@ const promo = await loyalty.applyPromo({
     <button class="dw-btn" id="loy-btn">Начислить 100 баллов</button>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-b{display:flex;flex-direction:column;gap:2px}.dw-btn{padding:12px 20px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:opacity .2s;display:inline-block;margin:0 auto}.dw-btn:hover{opacity:.85}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-b{display:flex;flex-direction:column;gap:2px}.dw-btn{padding:12px 20px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:opacity .2s;display:inline-block;margin:0 auto}.dw-btn:hover{opacity:.85}@media(min-width:768px){.dw{max-width:480px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){var bal=2450,lvlEl=document.getElementById('loy-lvl'),bar=document.getElementById('loy-bar'),balEl=document.getElementById('loy-bal'),lvls=[{n:'Silver',m:0},{n:'Gold',m:1000},{n:'Platinum',m:3000}];document.getElementById('loy-btn').addEventListener('click',function(){var t=this;t.disabled=1;var st=setInterval(function(){bal++;balEl.textContent=bal.toLocaleString('ru');var p=bal%1000/10;bar.style.width=p+'%';var cl=lvls.filter(function(l){return bal>=l.m});var cu=cl[cl.length-1];if(cu){lvlEl.textContent=cu.n;lvlEl.style.background=cu.n==='Platinum'?'linear-gradient(135deg,#a18cd1,#fbc2eb)':cu.n==='Gold'?'linear-gradient(135deg,#f6d365,#fda085)':'linear-gradient(135deg,#a8edea,#fed6e3)'}if(bal>=2550||bal%100===0&&bal>=2550||bal===2550){clearInterval(st);t.disabled=0}},30);});})();</script>""",
         "widget_css": "",
         "widget_js": ""
@@ -236,7 +236,7 @@ await credit.issue(application.id);""",
     <div style="display:flex;align-items:center;justify-content:center;gap:8px;color:#00b894;font-weight:600;font-size:14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00b894" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Предварительное одобрение</div>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-b{display:flex;flex-direction:column;gap:10px}.dw-f{display:flex;flex-direction:column;gap:3px}.dw-l{font-size:13px;color:var(--clr-text);font-weight:500}.dw-i{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:14px;box-sizing:border-box}.dw-i[type=range]{border:none;background:none;padding:4px 0}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-b{display:flex;flex-direction:column;gap:10px}.dw-f{display:flex;flex-direction:column;gap:3px}.dw-l{font-size:13px;color:var(--clr-text);font-weight:500}.dw-i{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:14px;box-sizing:border-box}.dw-i[type=range]{border:none;background:none;padding:4px 0}@media(min-width:768px){.dw{max-width:520px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){var as=document.getElementById('cc-as'),ts=document.getElementById('cc-ts'),pm=document.getElementById('cc-pm'),ae=document.getElementById('cc-a'),te=document.getElementById('cc-t');function calc(){var a=parseFloat(as.value),t=parseInt(ts.value),r=0.129/12;if(r===0){pm.textContent=Math.round(a/t).toLocaleString('ru')+' ₽'}else{var mp=a*r*Math.pow(1+r,t)/(Math.pow(1+r,t)-1);pm.textContent=Math.round(mp).toLocaleString('ru')+' ₽'}ae.textContent=Math.round(a).toLocaleString('ru');te.textContent=t}as.addEventListener('input',calc);ts.addEventListener('input',calc);calc()})();</script>""",
         "widget_css": "",
         "widget_js": ""
@@ -271,7 +271,7 @@ await credit.issue(application.id);""",
     <div id="mp-success" style="display:none;padding:20px"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#00b894" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><h3 style="color:#00b894;margin-top:12px">Заказ оформлен!</h3><p style="font-size:13px;color:var(--clr-muted);margin-top:4px">Номер: MK-<span id="mp-order-year"></span>-<span id="mp-order-num"></span></p></div>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-btn{padding:8px 12px;background:var(--clr-accent);border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s;width:100%}.dw-btn:hover{opacity:.85}.mp-c{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:12px;padding:12px;text-align:center}.mp-img{width:100%;height:80px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:8px}.mp-n{font-size:13px;font-weight:500;color:var(--clr-text);margin-bottom:4px}.mp-p{font-size:15px;font-weight:700;color:var(--clr-heading);margin-bottom:8px}.mp-ci{display:flex;justify-content:space-between;padding:4px 0;font-size:13px;color:var(--clr-text)}.mp-ci button{background:none;border:none;color:var(--clr-muted);cursor:pointer;font-size:11px;text-decoration:underline;padding:0}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-btn{padding:8px 12px;background:var(--clr-accent);border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s;width:100%}.dw-btn:hover{opacity:.85}.mp-c{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:12px;padding:12px;text-align:center}.mp-img{width:100%;height:80px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:8px}.mp-n{font-size:13px;font-weight:500;color:var(--clr-text);margin-bottom:4px}.mp-p{font-size:15px;font-weight:700;color:var(--clr-heading);margin-bottom:8px}.mp-ci{display:flex;justify-content:space-between;padding:4px 0;font-size:13px;color:var(--clr-text)}.mp-ci button{background:none;border:none;color:var(--clr-muted);cursor:pointer;font-size:11px;text-decoration:underline;padding:0}@media(min-width:768px){.dw{max-width:640px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){
 var items={},badge=document.getElementById('mp-cnt-badge'),cart=document.getElementById('mp-cart'),list=document.getElementById('mp-items'),total=document.getElementById('mp-total'),modal=document.getElementById('mp-modal'),mItems=document.getElementById('mp-modal-items'),mTotal=document.getElementById('mp-modal-total');
 function render(){var html='',t=0,c=0;for(var k in items){var it=items[k];html+='<div class="mp-ci"><span>'+it.n+' × '+it.q+'</span><span>'+((it.p*it.q).toLocaleString('ru'))+' ₽ <button class="mp-rm" data-k="'+k+'">✕</button></span></div>';t+=it.p*it.q;c+=it.q}list.innerHTML=html;total.textContent=t.toLocaleString('ru')+' ₽';badge.textContent=c;badge.style.display=c?'flex':'none';cart.style.display=c?'block':'none';Array.from(list.querySelectorAll('.mp-rm')).forEach(function(b){b.addEventListener('click',function(){var k=this.dataset.k;delete items[k];render()})})};
@@ -356,7 +356,7 @@ await terminal.printReceipt(payment.id);""",
     </div>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-btn{padding:12px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}.dw-btn:hover{opacity:.85}.dw-sp{width:28px;height:28px;border:2px solid var(--clr-border);border-top-color:var(--clr-accent);border-radius:50%;animation:dws .7s linear infinite;margin:0 auto}.pt-k{padding:14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:20px;font-weight:600;cursor:pointer;transition:all .15s;text-align:center}.pt-k:hover{background:var(--clr-surface);border-color:var(--clr-accent)}.pt-k:active{transform:scale(.95)}.pt-clr{color:#e17055;border-color:#e1705544}@keyframes dws{to{transform:rotate(360deg)}}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-btn{padding:12px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}.dw-btn:hover{opacity:.85}.dw-sp{width:28px;height:28px;border:2px solid var(--clr-border);border-top-color:var(--clr-accent);border-radius:50%;animation:dws .7s linear infinite;margin:0 auto}.pt-k{padding:14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:20px;font-weight:600;cursor:pointer;transition:all .15s;text-align:center}.pt-k:hover{background:var(--clr-surface);border-color:var(--clr-accent)}.pt-k:active{transform:scale(.95)}.pt-clr{color:#e17055;border-color:#e1705544}@keyframes dws{to{transform:rotate(360deg)}}@media(min-width:768px){.dw{max-width:400px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){var amt=0,e=document.getElementById('pt-amt'),b=document.getElementById('pt-pay'),st=document.getElementById('pt-st'),sp=document.getElementById('pt-sp'),ok=document.getElementById('pt-ok');document.querySelectorAll('.pt-k').forEach(function(k){k.addEventListener('click',function(){if(this.id==='pt-clr'){amt=0}else{var v=this.dataset.v;amt=amt*100+parseInt(v)}e.textContent=Math.round(amt).toLocaleString('ru')+' ₽'});});b.addEventListener('click',function(){if(amt<=0)return;b.style.display='none';st.style.display='block';sp.style.display='block';ok.style.display='none';setTimeout(function(){sp.style.display='none';ok.style.display='block'},1500);});})();</script>""",
         "widget_css": "",
         "widget_js": ""
@@ -406,7 +406,7 @@ await chatbot.notifyOperator(ticket.id);""",
     <button class="dw-btn ch-q" style="padding:6px 12px;font-size:12px" data-q="Проблема с платежом">Проблема с платежом</button>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-i{width:100%;padding:10px 14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:14px;box-sizing:border-box}.dw-i:focus{outline:none;border-color:var(--clr-accent)}.dw-btn{padding:12px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}.dw-btn:hover{opacity:.85}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-i{width:100%;padding:10px 14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:14px;box-sizing:border-box}.dw-i:focus{outline:none;border-color:var(--clr-accent)}.dw-btn{padding:12px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}.dw-btn:hover{opacity:.85}@media(min-width:768px){.dw{max-width:520px;margin-left:auto;margin-right:auto}}</style>
 <script>var chMsgs=document.getElementById('ch-msgs'),chInp=document.getElementById('ch-inp');var chRes={'привет':'Привет! Чем могу помочь?','как пополнить':'Пополнить баланс можно через личный кабинет или приложение. Выберите способ: карта, SBP или кошелёк.','проблема с платежом':'Опишите проблему подробнее. Возможно, потребуется проверить статус транзакции. Напишите номер операции.','по умолчанию':'Передаю ваш вопрос специалисту. Пожалуйста, ожидайте.'};function chAdd(m,u){var d=document.createElement('div');d.style.cssText='align-self:'+(u?'flex-end':'flex-start')+';background:'+(u?'var(--clr-accent)':'var(--clr-surface)')+';padding:10px 14px;border-radius:'+(u?'4px 12px 12px 12px':'12px 12px 12px 4px')+';max-width:80%;font-size:14px;color:'+(u?'#fff':'var(--clr-text)')+';'+(u?'':'border:1px solid var(--clr-border)');d.textContent=m;chMsgs.appendChild(d);chMsgs.scrollTop=chMsgs.scrollHeight}function chSend(){var t=chInp.value.trim();if(!t)return;chAdd(t,1);chInp.value='';var r=t.toLowerCase();var a=chRes[r]||Object.keys(chRes).filter(function(k){return r.includes(k)}).map(function(k){return chRes[k]})[0]||chRes['по умолчанию'];setTimeout(function(){chAdd(a,0)},500)}document.querySelectorAll('.ch-q').forEach(function(b){b.addEventListener('click',function(){chInp.value=this.dataset.q;chSend()})});</script>""",
         "widget_css": "",
         "widget_js": ""
@@ -453,7 +453,7 @@ const cohorts = await analytics.cohortAnalysis({
     </div>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.an-c{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;padding:14px;text-align:center}.an-l{font-size:12px;color:var(--clr-muted);margin-bottom:4px;font-weight:500}.an-v{font-size:22px;font-weight:700;color:var(--clr-heading);font-variant-numeric:tabular-nums}.an-bar{flex:1;background:linear-gradient(to top,var(--clr-accent),transparent);border-radius:3px 3px 0 0;min-height:8px;opacity:.7;transition:height .5s}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.an-c{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;padding:14px;text-align:center}.an-l{font-size:12px;color:var(--clr-muted);margin-bottom:4px;font-weight:500}.an-v{font-size:22px;font-weight:700;color:var(--clr-heading);font-variant-numeric:tabular-nums}.an-bar{flex:1;background:linear-gradient(to top,var(--clr-accent),transparent);border-radius:3px 3px 0 0;min-height:8px;opacity:.7;transition:height .5s}@media(min-width:768px){.dw{max-width:640px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){function an(e,v){var el=document.getElementById(e),s=0,i=setInterval(function(){s++;var d=Math.round(v*s/60);el.textContent=d+(e==='an-ltv'?' ₽':e==='an-conv'?'.'+(d%10)+'%':'');if(s>=60){clearInterval(i);el.textContent=v+(e==='an-ltv'?' ₽':e==='an-conv'?'.'+String(v).split('.')[1]+'%':'')}},20)}an('an-dau',12450);an('an-mau',45200);an('an-ltv',12500);setTimeout(function(){an('an-conv',32)},200);})();</script>""",
         "widget_css": "",
         "widget_js": ""
@@ -501,8 +501,8 @@ await monitoring.acknowledge(incident.id, {
   <div id="im-alert" style="display:none;margin-top:10px;padding:10px 14px;background:#e1705522;border:1px solid #e1705544;border-radius:10px;color:#e17055;font-size:13px;font-weight:500">⚠️ Инцидент: сервис недоступен</div>
   <div style="margin-top:10px;font-size:11px;color:var(--clr-muted)">Нажмите на сервис, чтобы переключить статус</div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.im-r{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;cursor:pointer;transition:all .2s}.im-r:hover{border-color:var(--clr-accent)}.im-d{width:10px;height:10px;border-radius:50%;flex-shrink:0}.im-g{background:#00b894;box-shadow:0 0 6px #00b89466}.im-y{background:#fdcb6e;box-shadow:0 0 6px #fdcb6e66}.im-r{background:#e17055;box-shadow:0 0 6px #e1705566}.im-n{flex:1;font-size:14px;font-weight:500;color:var(--clr-text)}.im-s{font-size:12px;color:var(--clr-muted)}</style>
-<script>(function(){var st={0:'ok',1:'ok',2:'warn',3:'ok',4:'ok'},al=document.getElementById('im-alert');document.querySelectorAll('.im-r').forEach(function(r,i){r.addEventListener('click',function(){var sts=['ok','warn','down'];var ci=sts.indexOf(st[i]);st[i]=sts[(ci+1)%3];var d=r.querySelector('.im-d');d.className='im-d';if(st[i]==='ok'){d.classList.add('im-g');r.querySelector('.im-s').textContent='Operational'}else if(st[i]==='warn'){d.classList.add('im-y');r.querySelector('.im-s').textContent='Degraded'}else{d.classList.add('im-r');r.querySelector('.im-s').textContent='Down'}var hasDown=Object.values(st).some(function(s){return s==='down'});al.style.display=hasDown?'block':'none';al.textContent=hasDown?'⚠️ Инцидент: требуется внимание':'✅ Все сервисы работают';al.style.color=hasDown?'#e17055':'#00b894'});});})();</script>""",
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.im-r{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;cursor:pointer;transition:all .2s}.im-r:hover{border-color:var(--clr-accent)}.im-d{width:10px;height:10px;border-radius:50%;flex-shrink:0}.im-g{background:#00b894;box-shadow:0 0 6px #00b89466}.im-y{background:#fdcb6e;box-shadow:0 0 6px #fdcb6e66}.im-red{background:#e17055;box-shadow:0 0 6px #e1705566}.im-n{flex:1;font-size:14px;font-weight:500;color:var(--clr-text)}.im-s{font-size:12px;color:var(--clr-muted)}@media(min-width:768px){.dw{max-width:640px;margin-left:auto;margin-right:auto}}</style>
+<script>(function(){var st={0:'ok',1:'ok',2:'warn',3:'ok',4:'ok'},al=document.getElementById('im-alert');document.querySelectorAll('.im-r').forEach(function(r,i){r.addEventListener('click',function(){var sts=['ok','warn','down'];var ci=sts.indexOf(st[i]);st[i]=sts[(ci+1)%3];var d=r.querySelector('.im-d');d.className='im-d';if(st[i]==='ok'){d.classList.add('im-g');r.querySelector('.im-s').textContent='Operational'}else if(st[i]==='warn'){d.classList.add('im-y');r.querySelector('.im-s').textContent='Degraded'}else{d.classList.add('im-red');r.querySelector('.im-s').textContent='Down'}var hasDown=Object.values(st).some(function(s){return s==='down'});al.style.display=hasDown?'block':'none';al.textContent=hasDown?'⚠️ Инцидент: требуется внимание':'✅ Все сервисы работают';al.style.color=hasDown?'#e17055':'#00b894'});});})();</script>""",
         "widget_css": "",
         "widget_js": ""
     },
@@ -551,7 +551,7 @@ const biometric = await onboarding.verifyBiometric({
   </div>
   <button class="dw-btn" id="ub-btn" style="margin-top:12px;width:100%">Далее</button>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-i{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);box-sizing:border-box;width:100%}.dw-i:focus{outline:none;border-color:var(--clr-accent)}.dw-btn{padding:12px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}.dw-btn:hover{opacity:.85}.ub{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1}.ub-n{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;background:var(--clr-bg);border:2px solid var(--clr-border);color:var(--clr-muted);transition:all .3s}.ub.s .ub-n{background:var(--clr-accent);border-color:var(--clr-accent);color:#fff}.ub-l{height:2px;flex:1;background:var(--clr-border);margin-bottom:22px}.ub-lb{font-size:11px;color:var(--clr-muted);white-space:nowrap}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-i{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);box-sizing:border-box;width:100%}.dw-i:focus{outline:none;border-color:var(--clr-accent)}.dw-btn{padding:12px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}.dw-btn:hover{opacity:.85}.ub{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1}.ub-n{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;background:var(--clr-bg);border:2px solid var(--clr-border);color:var(--clr-muted);transition:all .3s}.ub.s .ub-n{background:var(--clr-accent);border-color:var(--clr-accent);color:#fff}.ub-l{height:2px;flex:1;background:var(--clr-border);margin-bottom:22px}.ub-lb{font-size:11px;color:var(--clr-muted);white-space:nowrap}@media(min-width:768px){.dw{max-width:520px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){var s=1,btn=document.getElementById('ub-btn'),ct=document.getElementById('ub-c'),tt=document.getElementById('ub-t'),ff=document.getElementById('ub-f'),steps=['Заполните личные данные для регистрации','Загрузите скан паспорта','Пройдите биометрию','Регистрация завершена!'],cont=[true,true,true,false];function upd(){document.querySelectorAll('.ub').forEach(function(el,i){var idx=parseInt(el.dataset.s);el.classList.toggle('s',i+1<=s);});tt.textContent=steps[s-1];if(cont[s-1]){ff.style.display='flex';btn.textContent=s<4?'Далее':'Завершить'}else{ff.style.display='none';btn.style.display='none';ct.innerHTML='<div style=\"font-size:42px;margin-bottom:8px\">✅</div><div style=\"font-size:16px;font-weight:600;color:#00b894\">'+steps[s-1]+'</div>';}}btn.addEventListener('click',function(){if(s<4){s++;upd()}else{ct.innerHTML='<div style=\"font-size:42px;margin-bottom:8px\">✅</div><div style=\"font-size:16px;font-weight:600;color:#00b894\">Добро пожаловать!</div>';btn.style.display='none'}});upd()})();</script>""",
         "widget_css": "",
         "widget_js": ""
@@ -605,7 +605,7 @@ tg.close();""",
     </div>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.ts-c{display:flex;align-items:center;gap:10px;padding:8px;background:var(--clr-bg);border-radius:10px;border:1px solid var(--clr-border)}.ts-b{padding:6px 14px;background:var(--clr-accent);border:none;border-radius:8px;color:#fff;font-size:12px;font-weight:600;cursor:pointer;transition:opacity .2s;white-space:nowrap}.ts-b:hover{opacity:.85}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.ts-c{display:flex;align-items:center;gap:10px;padding:8px;background:var(--clr-bg);border-radius:10px;border:1px solid var(--clr-border)}.ts-b{padding:6px 14px;background:var(--clr-accent);border:none;border-radius:8px;color:#fff;font-size:12px;font-weight:600;cursor:pointer;transition:opacity .2s;white-space:nowrap}.ts-b:hover{opacity:.85}@media(min-width:768px){.dw{max-width:400px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){var tc=0,tt=0,ce=document.getElementById('ts-cnt'),te=document.getElementById('ts-tot');document.querySelectorAll('.ts-b').forEach(function(b,i){var ps=[79990,14990,49990];b.addEventListener('click',function(){tc++;tt+=ps[i];ce.textContent=tc;te.textContent=tt.toLocaleString('ru')+' ₽';var t=this;t.textContent='✓';setTimeout(function(){t.textContent='Купить'},1000);});});})();</script>""",
         "widget_css": "",
         "widget_js": ""
@@ -661,7 +661,7 @@ const ab = await loyalty.startABTest({
     <button class="dw-btn" id="ls-btn">Начислить +50 баллов</button>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-btn{padding:12px 20px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:opacity .2s}.dw-btn:hover{opacity:.85}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-btn{padding:12px 20px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:opacity .2s}.dw-btn:hover{opacity:.85}@media(min-width:768px){.dw{max-width:520px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){var pts=1340,tg=2000,next='Gold',lvs=[{n:'Silver',t:1000,next:'Gold',g:'linear-gradient(135deg,#a8edea,#fed6e3)'},{n:'Gold',t:3000,next:'Platinum',g:'linear-gradient(135deg,#f6d365,#fda085)'},{n:'Platinum',t:99999,next:'MAX',g:'linear-gradient(135deg,#a18cd1,#fbc2eb)'}];var ce=document.getElementById('ls-cur'),ne=document.getElementById('ls-nxt'),pe=document.getElementById('ls-pct'),be=document.getElementById('ls-bar'),pe2=document.getElementById('ls-pt');document.getElementById('ls-btn').addEventListener('click',function(){var t=this;t.disabled=1;var si=setInterval(function(){pts++;if(pts<=tg){var pc=Math.round((pts-1000)/(tg-1000)*100);pe.textContent=pc+'%';be.style.width=pc+'%'}pe2.textContent=pts.toLocaleString('ru');var cl=lvs.filter(function(l){return pts>=l.t});var cu=cl[cl.length-1];if(cu){ce.textContent=cu.n;ce.style.background=cu.g;if(cu.next){ne.textContent=cu.next;tg=lvs.filter(function(l){return l.t>pts})[0]?.t||99999;ne.style.background=lvs.filter(function(l){return l.t>pts})[0]?.g||'#333'}}if(pts>=tg+30||pts%50===0){clearInterval(si);t.disabled=0}},25);});})();</script>""",
         "widget_css": "",
         "widget_js": ""
@@ -705,7 +705,7 @@ const test = await constructor.testScenario(scenario.id, {
   </div>
   <div id="fc-info" style="display:none;margin-top:10px;padding:10px 14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;font-size:13px;color:var(--clr-muted)">✅ Сценарий готов к деплою</div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.fc-b{padding:10px 16px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s}.fc-b:hover{border-color:var(--clr-accent);background:var(--clr-surface)}.fc-b:active{transform:scale(.97)}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.fc-b{padding:10px 16px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s}.fc-b:hover{border-color:var(--clr-accent);background:var(--clr-surface)}.fc-b:active{transform:scale(.97)}@media(min-width:768px){.dw{max-width:520px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){var flow=document.getElementById('fc-flow'),ph=document.getElementById('fc-ph'),info=document.getElementById('fc-info'),blocks=[{n:'Приём платежа',c:'#6c5ce7'},{n:'Комиссия',c:'#f39c12'},{n:'Уведомление',c:'#00b894'}],added=[];document.querySelectorAll('.fc-b').forEach(function(b){b.addEventListener('click',function(){var i=parseInt(this.dataset.i),bl=blocks[i];if(added.some(function(a){return a===i}))return;added.push(i);ph.style.display='none';var el=document.createElement('div');el.style.cssText='padding:10px 16px;background:'+bl.c+'22;border:1px solid '+bl.c+'44;border-radius:10px;font-size:13px;font-weight:500;color:var(--clr-text);display:flex;align-items:center;gap:6px;animation:fcIn .3s ease';el.textContent='● '+bl.n;var rm=document.createElement('span');rm.style.cssText='margin-left:6px;cursor:pointer;opacity:.6;font-size:16px';rm.textContent='×';rm.addEventListener('click',function(e){e.stopPropagation();el.remove();added=added.filter(function(a){return a!==i});if(added.length===0){ph.style.display='block';info.style.display='none'}});el.appendChild(rm);flow.appendChild(el);if(added.length>0)info.style.display='block'});});})();@keyframes fcIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}</script>""",
         "widget_css": "",
         "widget_js": ""
@@ -755,7 +755,7 @@ const risk = await pmo.assessRisk(project.id, {
   </div>
   <div id="pp-d" style="display:none;margin-top:12px;padding:14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;font-size:13px;color:var(--clr-text);animation:fcIn .3s ease"></div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.pp-p{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;cursor:pointer;transition:all .2s}.pp-p:hover{border-color:var(--clr-accent)}.pp-bar{flex:2;height:28px;background:var(--clr-surface);border-radius:6px;position:relative;overflow:hidden}.pp-fill{height:100%;border-radius:6px;position:relative}.pp-today{position:absolute;top:0;bottom:0;width:2px;background:#e17055;left:50%;box-shadow:0 0 4px #e1705566}@keyframes fcIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}</style>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.pp-p{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;cursor:pointer;transition:all .2s}.pp-p:hover{border-color:var(--clr-accent)}.pp-bar{flex:2;height:28px;background:var(--clr-surface);border-radius:6px;position:relative;overflow:hidden}.pp-fill{height:100%;border-radius:6px;position:relative}.pp-today{position:absolute;top:0;bottom:0;width:2px;background:#e17055;left:50%;box-shadow:0 0 4px #e1705566}@keyframes fcIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}@media(min-width:768px){.dw{max-width:640px;margin-left:auto;margin-right:auto}}</style>
 <script>(function(){var details=[{n:'Маркетплейс V2',s:'Статус: Active\nБюджет: 15 млн ₽\nКоманда: 5 чел.\nРиски: низкие'},{n:'Кредитный конвейер',s:'Статус: Active\nБюджет: 8 млн ₽\nКоманда: 4 чел.\nРиски: средние'},{n:'Mobile App',s:'Статус: Planning\nБюджет: 6 млн ₽\nКоманда: 3 чел.\nРиски: высокие'}],dEl=document.getElementById('pp-d');document.querySelectorAll('.pp-p').forEach(function(p,i){p.addEventListener('click',function(){dEl.style.display='block';dEl.innerHTML='<strong>'+details[i].n+'</strong><br>'+details[i].s.replace(/\\n/g,'<br>')});});})();</script>""",
         "widget_css": "",
         "widget_js": ""
@@ -792,45 +792,112 @@ const route = await checkout.smartRoute({
         "features": ["Кастомизация под бренд (скины)", "Умная маршрутизация платежей", "Мультиэквайринг на одной странице", "Invoice-ссылки", "Антифрод (3DS 2.0)", "Аналитика конверсий"],
         "tags": ["React", "Node.js", "PCI DSS", "3DS 2.0", "PostgreSQL"],
         "gradient": "#0984e3,#74b9ff",
-        "widget_html": """<div class="dw">
-  <h3 class="dw-t">🛍️ Checkout Page</h3>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div class="dw-f"><label class="dw-l">Email</label><input class="dw-i" id="pp-email" value="user@example.com" style="padding:10px 14px"></div>
-      <div class="dw-f"><label class="dw-l">Номер карты</label><input class="dw-i" id="pp-card" placeholder="0000 0000 0000 0000" maxlength="19" style="padding:10px 14px"></div>
-      <div class="dw-f"><label class="dw-l">Имя на карте</label><input class="dw-i" id="pp-name" value="IVAN PETROV" style="padding:10px 14px"></div>
-      <button class="dw-btn" id="pp-btn" style="margin-top:4px">Оплатить 5 499 ₽</button>
-    </div>
-    <div style="background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:12px;padding:14px">
-      <div style="font-size:13px;font-weight:600;color:var(--clr-heading);margin-bottom:10px">Ваш заказ</div>
-      <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--clr-text);padding:6px 0;border-bottom:1px solid var(--clr-border)"><span>Смартфон X Pro × 1</span><span>79 990 ₽</span></div>
-      <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--clr-text);padding:6px 0;border-bottom:1px solid var(--clr-border)"><span>Доставка</span><span>Бесплатно</span></div>
-      <div style="display:flex;justify-content:space-between;font-size:15px;font-weight:700;color:var(--clr-heading);padding:10px 0 0"><span>Итого</span><span>79 990 ₽</span></div>
-    </div>
+        "widget_html": """<div class="pc-card">
+  <div class="pc-head">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--clr-accent)" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
+    <span>Checkout Page</span>
   </div>
-  <div id="pp-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:99999;align-items:center;justify-content:center">
-    <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:20px;padding:32px;text-align:center;max-width:340px;animation:fcIn .3s ease">
-      <div style="font-size:36px;margin-bottom:12px">🔐</div>
-      <div style="font-size:16px;font-weight:600;color:var(--clr-heading);margin-bottom:6px">3D Secure</div>
-      <div style="font-size:13px;color:var(--clr-muted);margin-bottom:16px">Подтвердите оплату через ваш банк</div>
-      <div style="display:flex;gap:10px;justify-content:center">
-        <button class="dw-btn" onclick="ppSuccess()" style="padding:10px 24px;font-size:13px">Подтвердить</button>
-        <button class="dw-btn" onclick="ppClose()" style="padding:10px 24px;font-size:13px;background:var(--clr-bg);color:var(--clr-text);border:1px solid var(--clr-border)">Отмена</button>
+  <div class="pc-body">
+    <div class="pc-grid">
+      <div class="pc-form">
+        <div class="pc-fld">
+          <label class="pc-lbl">Email</label>
+          <input class="pc-inp" id="pp-email" value="user@example.com">
+        </div>
+        <div class="pc-fld">
+          <label class="pc-lbl">Номер карты</label>
+          <div class="pc-iw">
+            <input class="pc-inp pc-mono" id="pp-card" placeholder="0000 0000 0000 0000" maxlength="19">
+            <svg class="pc-ci" width="22" height="16" viewBox="0 0 24 16"><rect x="1" y="1" width="22" height="14" rx="2" stroke="var(--clr-faint)" stroke-width="1.2" fill="none"/><line x1="1" y1="6" x2="23" y2="6" stroke="var(--clr-faint)" stroke-width="1.2"/><circle cx="9" cy="10" r="2.5" stroke="var(--clr-accent)" stroke-width="1.2" fill="none" opacity=".5"/><circle cx="15" cy="10" r="2.5" stroke="var(--clr-accent)" stroke-width="1.2" fill="none" opacity=".5"/></svg>
+          </div>
+        </div>
+        <div class="pc-fld">
+          <label class="pc-lbl">Имя на карте</label>
+          <input class="pc-inp pc-mono" id="pp-name" value="IVAN PETROV">
+        </div>
+        <button class="pc-btn" id="pp-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Оплатить 5 499 ₽
+        </button>
+      </div>
+      <div class="pc-order">
+        <div class="pc-order-hdr">Ваш заказ</div>
+        <div class="pc-order-row"><span>Смартфон X Pro × 1</span><span>79 990 ₽</span></div>
+        <div class="pc-order-row"><span>Страховка +1 год</span><span>3 990 ₽</span></div>
+        <div class="pc-order-row"><span>Доставка</span><span class="pc-free">Бесплатно</span></div>
+        <div class="pc-order-row pc-order-total"><span>Итого</span><span>83 980 ₽</span></div>
+        <div class="pc-order-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Безопасная оплата
+        </div>
       </div>
     </div>
-  </div>
-  <div id="pp-ok" style="display:none;text-align:center;padding:16px;margin-top:10px">
-    <div style="font-size:40px;margin-bottom:8px">✅</div>
-    <div style="font-size:16px;font-weight:600;color:#00b894">Оплата подтверждена</div>
+    <div class="pc-3ds" id="pp-modal">
+      <div class="pc-3ds-box">
+        <div class="pc-3ds-icon">🔐</div>
+        <div class="pc-3ds-t">3D Secure</div>
+        <div class="pc-3ds-sub">Подтвердите оплату через ваш банк</div>
+        <div class="pc-3ds-actions">
+          <button class="pc-btn pc-btn-sm" id="pp-confirm">Подтвердить</button>
+          <button class="pc-btn pc-btn-sm pc-btn-ghost" id="pp-cancel">Отмена</button>
+        </div>
+      </div>
+    </div>
+    <div class="pc-ok" id="pp-ok">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#00b894" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 8 10 16 7 12"/></svg>
+      <div class="pc-ok-t">Оплата подтверждена</div>
+      <div class="pc-ok-sub">Спасибо! Ваш платёж прошёл успешно.</div>
+    </div>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-f{display:flex;flex-direction:column;gap:3px}.dw-l{font-size:12px;color:var(--clr-muted);font-weight:500}.dw-i{width:100%;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:14px;font-family:'SF Mono',monospace;box-sizing:border-box;transition:border-color .2s}.dw-i:focus{outline:none;border-color:var(--clr-accent)}.dw-btn{padding:12px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}.dw-btn:hover{opacity:.85}@keyframes fcIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}@media(max-width:600px){.dw>div:first-child{grid-template-columns:1fr!important}}</style>
+<style>
+.pc-card{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:20px;overflow:hidden}
+.pc-head{display:flex;align-items:center;gap:10px;padding:20px 24px 0;font-size:15px;font-weight:600;color:var(--clr-heading)}
+.pc-body{padding:20px 24px 24px;display:flex;flex-direction:column;gap:0}
+.pc-grid{display:flex;flex-direction:column;gap:18px}
+.pc-order{margin-top:0}
+.pc-form{display:flex;flex-direction:column;gap:14px}
+.pc-fld{display:flex;flex-direction:column;gap:5px}
+.pc-lbl{font-size:11px;color:var(--clr-faint);font-weight:500;letter-spacing:.4px;text-transform:uppercase}
+.pc-iw{position:relative;display:flex;align-items:center}
+.pc-inp{width:100%;padding:12px 14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:12px;color:var(--clr-text);font-size:14px;box-sizing:border-box;transition:border-color .25s,box-shadow .25s}
+.pc-inp:focus{outline:none;border-color:var(--clr-accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--clr-accent) 18%,transparent)}
+.pc-mono{font-family:'SF Mono','Fira Code',monospace;letter-spacing:.5px}
+.pc-mono::placeholder{color:var(--clr-faint);opacity:.4;letter-spacing:0}
+.pc-ci{position:absolute;right:12px;pointer-events:none;opacity:.6}
+.pc-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;background:var(--clr-accent);border:none;border-radius:14px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .25s,transform .15s;font-family:inherit;width:100%;margin-top:2px}
+.pc-btn:hover{opacity:.9;transform:translateY(-1px)}
+.pc-btn:active{transform:translateY(0)}
+.pc-btn-sm{padding:12px 20px;width:auto;font-size:13px}
+.pc-btn-ghost{background:var(--clr-bg);color:var(--clr-text);border:1px solid var(--clr-border)}
+.pc-order{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:14px;padding:16px}
+.pc-order-hdr{font-size:13px;font-weight:600;color:var(--clr-heading);margin-bottom:12px}
+.pc-order-row{display:flex;justify-content:space-between;font-size:13px;color:var(--clr-text);padding:5px 0;border-bottom:1px solid var(--clr-border)}
+.pc-order-row:last-of-type{border-bottom:none}
+.pc-order-total{font-weight:700;color:var(--clr-heading);padding-top:8px!important;font-size:14px;border-top:1px solid var(--clr-border)!important;margin-top:4px}
+.pc-free{color:#00b894;font-weight:500}
+.pc-order-badge{display:flex;align-items:center;justify-content:center;gap:5px;font-size:10px;color:var(--clr-faint);opacity:.6;margin-top:12px;padding-top:8px;border-top:1px solid var(--clr-border)}
+.pc-3ds{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:99999;align-items:center;justify-content:center}
+.pc-3ds-box{background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:20px;padding:32px;text-align:center;max-width:340px;width:90%;animation:pcf .3s ease}
+.pc-3ds-icon{font-size:36px;margin-bottom:12px}
+.pc-3ds-t{font-size:16px;font-weight:600;color:var(--clr-heading);margin-bottom:6px}
+.pc-3ds-sub{font-size:13px;color:var(--clr-muted);margin-bottom:18px}
+.pc-3ds-actions{display:flex;gap:10px;justify-content:center}
+.pc-ok{display:none;flex-direction:column;align-items:center;gap:6px;padding:20px 0 8px;text-align:center}
+.pc-ok-t{color:#00b894;font-weight:600;font-size:16px;margin-top:4px}
+.pc-ok-sub{color:var(--clr-faint);font-size:12px;opacity:.6}
+@keyframes pcf{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+@media (min-width:768px){.pc-card{max-width:520px;margin-left:auto;margin-right:auto}}
+@media (max-width:640px){.pc-head{padding:16px 18px 0}.pc-body{padding:16px 18px 20px}.pc-order{padding:14px}}
+</style>
 <script>
+(function(){
 document.getElementById('pp-card').addEventListener('input',function(e){e.target.value=e.target.value.replace(/\D/g,'').replace(/(.{4})/g,'$1 ').trim();});
 document.getElementById('pp-btn').addEventListener('click',function(){document.getElementById('pp-modal').style.display='flex';});
-function ppSuccess(){document.getElementById('pp-modal').style.display='none';document.getElementById('pp-ok').style.display='block';var b=document.getElementById('pp-btn');b.textContent='✓ Оплачено';b.style.display='block';b.disabled=1;}
-function ppClose(){document.getElementById('pp-modal').style.display='none';}
-</script>""",
+document.getElementById('pp-confirm').addEventListener('click',function(){document.getElementById('pp-modal').style.display='none';document.getElementById('pp-ok').style.display='flex';var b=document.getElementById('pp-btn');b.textContent='✓ Оплачено';b.disabled=1;b.style.cursor='default';b.style.transform='none'});
+document.getElementById('pp-cancel').addEventListener('click',function(){document.getElementById('pp-modal').style.display='none';});
+document.getElementById('pp-modal').addEventListener('click',function(e){if(e.target===this)this.style.display='none';});
+})();</script>""",
         "widget_css": "",
         "widget_js": ""
     }
