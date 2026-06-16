@@ -671,9 +671,9 @@ const risk = await pmo.assessRisk(project.id, {
         "desc": "Кастомизируемая платёжная страница (Checkout Page) с мультиэквайрингом, скинами под бренд и умной маршрутизацией.",
         "meta_desc": "Демо платёжной страницы: кастомизируемый checkout, мультиэквайринг, скины, умная маршрутизация. Примеры кода встраивания.",
         "code": """// Встраивание платёжной страницы
-<iframe src="https://pay.axiiom.ru/checkout/{session_id}" 
-        width="100%" height="600" frameborder="0">
-</iframe>
+&lt;iframe src="https://pay.axiiom.ru/checkout/{session_id}" 
+        width="100%" height="600" frameborder="0"&gt;
+&lt;/iframe&gt;
 
 // Создание сессии checkout
 const session = await checkout.createSession({
