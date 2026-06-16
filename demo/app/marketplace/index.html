@@ -162,21 +162,41 @@
     <p class="label">Интерактивное демо</p>
     <h2>Попробуйте прямо сейчас</h2>
     <div class="dw">
-  <h3 class="dw-t">🛒 Маркетплейс</h3>
-  <div style="position:relative">
-    <div style="position:absolute;top:-8px;right:-4px;background:var(--clr-accent);color:#fff;font-size:12px;font-weight:600;min-width:22px;height:22px;border-radius:11px;display:flex;align-items:center;justify-content:center" id="mp-cnt">0</div>
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--clr-text)" stroke-width="2" style="position:absolute;top:-8px;right:8px;opacity:.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-top:8px">
+  <h3 class="dw-t" style="display:flex;justify-content:space-between;align-items:center">🛒 Маркетплейс <span id="mp-cnt-badge" style="background:var(--clr-accent);color:#fff;font-size:11px;font-weight:600;min-width:20px;height:20px;border-radius:10px;display:none;align-items:center;justify-content:center">0</span></h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px">
     <div class="mp-c"><div class="mp-img" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">📱</div><div class="mp-n">Phone X Pro</div><div class="mp-p">79 990 ₽</div><button class="dw-btn mp-b" data-n="Phone X Pro" data-p="79990">В корзину</button></div>
     <div class="mp-c"><div class="mp-img" style="background:linear-gradient(135deg,#00b894,#55efc4)">💻</div><div class="mp-n">NoteBook Air</div><div class="mp-p">129 990 ₽</div><button class="dw-btn mp-b" data-n="NoteBook Air" data-p="129990">В корзину</button></div>
     <div class="mp-c"><div class="mp-img" style="background:linear-gradient(135deg,#fd79a8,#e84393)">🎧</div><div class="mp-n">Headphones Pro</div><div class="mp-p">14 990 ₽</div><button class="dw-btn mp-b" data-n="Headphones Pro" data-p="14990">В корзину</button></div>
     <div class="mp-c"><div class="mp-img" style="background:linear-gradient(135deg,#fdcb6e,#f39c12)">⌚</div><div class="mp-n">Watch Ultra</div><div class="mp-p">49 990 ₽</div><button class="dw-btn mp-b" data-n="Watch Ultra" data-p="49990">В корзину</button></div>
   </div>
-  <div id="mp-tot" style="margin-top:12px;padding:12px;background:var(--clr-bg);border-radius:10px;text-align:center;font-size:14px;color:var(--clr-muted);display:none">Итого: <strong id="mp-tn" style="color:var(--clr-heading)">0</strong> товаров на <strong id="mp-ts" style="color:var(--clr-heading)">0 ₽</strong></div>
+  <div id="mp-cart" style="display:none;margin-top:16px;padding:16px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:12px">
+    <div style="font-size:14px;font-weight:600;color:var(--clr-heading);margin-bottom:8px">Корзина</div>
+    <div id="mp-items"></div>
+    <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid var(--clr-border);margin-top:8px;font-weight:700;color:var(--clr-heading)"><span>Итого:</span><span id="mp-total">0 ₽</span></div>
+    <button class="dw-btn" id="mp-checkout-btn" style="margin-top:12px;width:100%">Оформить заказ</button>
+  </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-btn{padding:8px 12px;background:var(--clr-accent);border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s;width:100%}.dw-btn:hover{opacity:.85}.mp-c{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:12px;padding:12px;text-align:center}.mp-img{width:100%;height:80px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:8px}.mp-n{font-size:13px;font-weight:500;color:var(--clr-text);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mp-p{font-size:15px;font-weight:700;color:var(--clr-heading);margin-bottom:8px}</style>
-<script>(function(){var cnt=0,tot=0,ce=document.getElementById('mp-cnt'),tn=document.getElementById('mp-tn'),ts=document.getElementById('mp-ts'),tt=document.getElementById('mp-tot');document.querySelectorAll('.mp-b').forEach(function(b){b.addEventListener('click',function(){cnt++;tot+=parseInt(this.dataset.p);ce.textContent=cnt;tn.textContent=cnt;ts.textContent=tot.toLocaleString('ru')+' ₽';tt.style.display='block';var t=this;t.textContent='✓ В корзине';setTimeout(function(){t.textContent='В корзину'},1500);});});})();</script>
+<div id="mp-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:99999;align-items:center;justify-content:center">
+  <div style="background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:16px;padding:32px;max-width:400px;width:90%;text-align:center">
+    <h3 style="color:var(--clr-heading);margin-bottom:16px">Оформление заказа</h3>
+    <div id="mp-modal-items" style="font-size:13px;color:var(--clr-muted);margin-bottom:16px;text-align:left"></div>
+    <div id="mp-modal-total" style="font-size:18px;font-weight:700;color:var(--clr-heading);margin-bottom:20px"></div>
+    <button class="dw-btn" id="mp-confirm" style="width:100%;margin-bottom:8px">Подтвердить заказ</button>
+    <button class="dw-btn" id="mp-cancel" style="background:transparent;border:1px solid var(--clr-border);color:var(--clr-muted)">Отмена</button>
+    <div id="mp-success" style="display:none;padding:20px"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#00b894" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><h3 style="color:#00b894;margin-top:12px">Заказ оформлен!</h3><p style="font-size:13px;color:var(--clr-muted);margin-top:4px">Номер: MK-2024-{RAND}</p></div>
+  </div>
+</div>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-btn{padding:8px 12px;background:var(--clr-accent);border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s;width:100%}.dw-btn:hover{opacity:.85}.mp-c{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:12px;padding:12px;text-align:center}.mp-img{width:100%;height:80px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:8px}.mp-n{font-size:13px;font-weight:500;color:var(--clr-text);margin-bottom:4px}.mp-p{font-size:15px;font-weight:700;color:var(--clr-heading);margin-bottom:8px}.mp-ci{display:flex;justify-content:space-between;padding:4px 0;font-size:13px;color:var(--clr-text)}.mp-ci button{background:none;border:none;color:var(--clr-muted);cursor:pointer;font-size:11px;text-decoration:underline;padding:0}</style>
+<script>(function(){
+var items={},badge=document.getElementById('mp-cnt-badge'),cart=document.getElementById('mp-cart'),list=document.getElementById('mp-items'),total=document.getElementById('mp-total'),modal=document.getElementById('mp-modal'),mItems=document.getElementById('mp-modal-items'),mTotal=document.getElementById('mp-modal-total');
+function render(){var html='',t=0,c=0;for(var k in items){var it=items[k];html+='<div class="mp-ci"><span>'+it.n+' × '+it.q+'</span><span>'+((it.p*it.q).toLocaleString('ru'))+' ₽ <button onclick="removeItem(''+k+'')">✕</button></span></div>';t+=it.p*it.q;c+=it.q}list.innerHTML=html;total.textContent=t.toLocaleString('ru')+' ₽';badge.textContent=c;badge.style.display=c?'flex':'none';cart.style.display=c?'block':'none'}
+window.removeItem=function(k){delete items[k];render()};
+document.querySelectorAll('.mp-b').forEach(function(b){b.addEventListener('click',function(){var n=this.dataset.n,p=parseInt(this.dataset.p);if(!items[n])items[n]={n:n,p:p,q:0};items[n].q++;render();this.textContent='✓ '+n;var t=this;setTimeout(function(){t.textContent='В корзину'},800)})});
+document.getElementById('mp-checkout-btn').addEventListener('click',function(){var h='';for(var k in items){h+='<div style="display:flex;justify-content:space-between;padding:2px 0"><span>'+items[k].n+' × '+items[k].q+'</span><span>'+((items[k].p*items[k].q).toLocaleString('ru'))+' ₽</span></div>'}mItems.innerHTML=h;var t=0;for(var k in items)t+=items[k].p*items[k].q;mTotal.textContent='Итого: '+t.toLocaleString('ru')+' ₽';modal.style.display='flex'});
+document.getElementById('mp-confirm').addEventListener('click',function(){var s=document.getElementById('mp-success');s.style.display='block';s.querySelector('h3').textContent='Заказ оформлен!';document.querySelector('#mp-modal > div > h3').style.display='none';document.getElementById('mp-modal-items').style.display='none';document.getElementById('mp-modal-total').style.display='none';this.style.display='none';document.getElementById('mp-cancel').style.display='none';items={};render();setTimeout(function(){modal.style.display='none';location.reload()},2500)});
+document.getElementById('mp-cancel').addEventListener('click',function(){modal.style.display='none'});
+modal.addEventListener('click',function(e){if(e.target===modal)modal.style.display='none'});
+})();</script>
   </div>
 </section>
 
