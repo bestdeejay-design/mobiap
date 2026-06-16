@@ -59,6 +59,8 @@
                   radial-gradient(ellipse 50% 35% at 70% 80%, rgba(225,112,85,.05), transparent),
                   var(--clr-bg);
     }
+    .hero-bg-svg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 100%; max-width: 800px; opacity: .5; pointer-events: none; animation: rotateSlow 60s linear infinite; }
+    @keyframes rotateSlow { to { transform: translate(-50%,-50%) rotate(360deg); } }
     .code-block {
       background: rgba(255,255,255,.03); border: 1px solid var(--clr-border);
       border-radius: 16px; padding: 24px; overflow-x: auto; margin: 20px 0;
@@ -92,6 +94,7 @@
     @media (max-width: 768px) {
       .demo-page-hero { min-height: 50vh; padding-top: 80px; }
       .feature-grid { grid-template-columns: 1fr; }
+      .hero-bg-svg { max-width: 500px; }
     }
   </style>
 </head>
@@ -141,6 +144,7 @@
 <a href="/demo/app/" class="demo-nav-back">← Все демо AXIIOM</a>
 
 <section class="demo-page-hero">
+  <div class="hero-bg-svg" aria-hidden="true"><svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="400" cy="300" r="280" stroke="rgba(255,255,255,0.05)" stroke-width="2"/><circle cx="400" cy="300" r="200" stroke="rgba(255,255,255,0.06)" stroke-width="2"/><circle cx="400" cy="300" r="120" stroke="rgba(255,255,255,0.08)" stroke-width="2"/><line x1="50" y1="300" x2="750" y2="300" stroke="rgba(255,255,255,0.05)" stroke-width="2"/><line x1="400" y1="20" x2="400" y2="580" stroke="rgba(255,255,255,0.05)" stroke-width="2"/><path d="M200 300 L400 100 L600 300 L400 500 Z" stroke="rgba(255,255,255,0.06)" stroke-width="2" fill="none"/><circle cx="400" cy="300" r="4" fill="rgba(255,255,255,0.15)"/></svg></div>
   <div class="container">
     <div class="hero-content">
       <p class="badge">AXIIOM Demo</p>

@@ -59,6 +59,8 @@
                   radial-gradient(ellipse 50% 35% at 70% 80%, rgba(253,203,110,.05), transparent),
                   var(--clr-bg);
     }
+    .hero-bg-svg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 100%; max-width: 800px; opacity: .5; pointer-events: none; animation: rotateSlow 60s linear infinite; }
+    @keyframes rotateSlow { to { transform: translate(-50%,-50%) rotate(360deg); } }
     .code-block {
       background: rgba(255,255,255,.03); border: 1px solid var(--clr-border);
       border-radius: 16px; padding: 24px; overflow-x: auto; margin: 20px 0;
@@ -92,6 +94,7 @@
     @media (max-width: 768px) {
       .demo-page-hero { min-height: 50vh; padding-top: 80px; }
       .feature-grid { grid-template-columns: 1fr; }
+      .hero-bg-svg { max-width: 500px; }
     }
   </style>
 </head>
@@ -141,6 +144,7 @@
 <a href="/demo/app/" class="demo-nav-back">← Все демо AXIIOM</a>
 
 <section class="demo-page-hero">
+  <div class="hero-bg-svg" aria-hidden="true"><svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="400" cy="300" r="280" stroke="rgba(255,255,255,0.05)" stroke-width="2"/><circle cx="400" cy="300" r="200" stroke="rgba(255,255,255,0.06)" stroke-width="2"/><circle cx="400" cy="300" r="120" stroke="rgba(255,255,255,0.08)" stroke-width="2"/><line x1="50" y1="300" x2="750" y2="300" stroke="rgba(255,255,255,0.05)" stroke-width="2"/><line x1="400" y1="20" x2="400" y2="580" stroke="rgba(255,255,255,0.05)" stroke-width="2"/><path d="M200 300 L400 100 L600 300 L400 500 Z" stroke="rgba(255,255,255,0.06)" stroke-width="2" fill="none"/><circle cx="400" cy="300" r="4" fill="rgba(255,255,255,0.15)"/></svg></div>
   <div class="container">
     <div class="hero-content">
       <p class="badge">AXIIOM Demo</p>
@@ -178,11 +182,12 @@
     <div id="pt-st" style="display:none;text-align:center;padding:12px">
       <div class="dw-sp" id="pt-sp"></div>
       <div id="pt-ok" style="display:none;color:#00b894;font-weight:600;font-size:15px">✅ Оплата принята</div>
+      <button id="pt-reset" style="display:none;margin-top:12px;padding:8px 16px;background:none;border:1px solid var(--clr-border);border-radius:8px;color:var(--clr-muted);font-size:12px;cursor:pointer;transition:all .2s">⟳ Новый платёж</button>
     </div>
   </div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-btn{padding:12px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}.dw-btn:hover{opacity:.85}.dw-sp{width:28px;height:28px;border:2px solid var(--clr-border);border-top-color:var(--clr-accent);border-radius:50%;animation:dws .7s linear infinite;margin:0 auto}.pt-k{padding:14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:20px;font-weight:600;cursor:pointer;transition:all .15s;text-align:center}.pt-k:hover{background:var(--clr-surface);border-color:var(--clr-accent)}.pt-k:active{transform:scale(.95)}.pt-clr{color:#e17055;border-color:#e1705544}@keyframes dws{to{transform:rotate(360deg)}}@media(min-width:768px){.dw{max-width:400px;margin-left:auto;margin-right:auto}}</style>
-<script>(function(){var amt=0,e=document.getElementById('pt-amt'),b=document.getElementById('pt-pay'),st=document.getElementById('pt-st'),sp=document.getElementById('pt-sp'),ok=document.getElementById('pt-ok');document.querySelectorAll('.pt-k').forEach(function(k){k.addEventListener('click',function(){if(this.id==='pt-clr'){amt=0}else{var v=this.dataset.v;amt=amt*100+parseInt(v)}e.textContent=Math.round(amt).toLocaleString('ru')+' ₽'});});b.addEventListener('click',function(){if(amt<=0)return;b.style.display='none';st.style.display='block';sp.style.display='block';ok.style.display='none';setTimeout(function(){sp.style.display='none';ok.style.display='block'},1500);});})();</script>
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-btn{padding:12px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}.dw-btn:hover{opacity:.85}.dw-sp{width:28px;height:28px;border:2px solid var(--clr-border);border-top-color:var(--clr-accent);border-radius:50%;animation:dws .7s linear infinite;margin:0 auto}.pt-k{padding:14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;color:var(--clr-text);font-size:20px;font-weight:600;cursor:pointer;transition:all .15s;text-align:center}.pt-k:hover{background:var(--clr-surface);border-color:var(--clr-accent)}.pt-k:active{transform:scale(.95)}.pt-clr{color:#e17055;border-color:#e1705544}#pt-reset:hover{border-color:var(--clr-accent);color:var(--clr-accent)}@keyframes dws{to{transform:rotate(360deg)}}@media(min-width:768px){.dw{max-width:400px;margin-left:auto;margin-right:auto}}</style>
+<script>(function(){var amt=0,e=document.getElementById('pt-amt'),b=document.getElementById('pt-pay'),st=document.getElementById('pt-st'),sp=document.getElementById('pt-sp'),ok=document.getElementById('pt-ok'),rs=document.getElementById('pt-reset');document.querySelectorAll('.pt-k').forEach(function(k){k.addEventListener('click',function(){if(this.id==='pt-clr'){amt=0}else{var v=this.dataset.v;amt=amt*100+parseInt(v)}e.textContent=Math.round(amt).toLocaleString('ru')+' ₽'});});b.addEventListener('click',function(){if(amt<=0)return;b.style.display='none';st.style.display='block';sp.style.display='block';ok.style.display='none';rs.style.display='none';setTimeout(function(){sp.style.display='none';ok.style.display='block';rs.style.display='inline-block'},1500);});rs.addEventListener('click',function(){amt=0;e.textContent='0 ₽';b.style.display='block';st.style.display='none';sp.style.display='none';ok.style.display='none';rs.style.display='none';});})();</script>
   </div>
 </section>
 
