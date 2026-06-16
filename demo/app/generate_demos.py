@@ -179,20 +179,27 @@ const promo = await loyalty.applyPromo({
         "gradient": "#fd79a8,#e84393",
         "widget_html": """<div class="dw">
   <h3 class="dw-t">🏆 Программа лояльности</h3>
-  <div class="dw-b" style="text-align:center">
-    <div style="font-size:13px;color:var(--clr-muted);margin-bottom:4px">Ваш баланс</div>
-    <div id="loy-bal" style="font-size:42px;font-weight:700;color:var(--clr-heading);font-variant-numeric:tabular-nums;transition:all .3s">2 450</div>
-    <div style="font-size:13px;color:var(--clr-muted);margin-bottom:12px">баллов</div>
-    <div id="loy-lvl" style="display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:12px;background:linear-gradient(135deg,#f6d365,#fda085);color:#1a1a2e">Silver</div>
-    <div style="margin:12px 0 16px">
-      <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--clr-muted);margin-bottom:4px"><span>Silver</span><span>Gold</span></div>
-      <div style="height:6px;background:var(--clr-bg);border-radius:3px;overflow:hidden"><div id="loy-bar" style="height:100%;width:45%;background:linear-gradient(90deg,var(--clr-accent),#f6d365);border-radius:3px;transition:width .5s ease"></div></div>
-    </div>
-    <button class="dw-btn" id="loy-btn">Начислить 100 баллов</button>
+  <div style="display:flex;gap:8px;margin-bottom:14px">
+    <div class="loy-card" data-l="silver" style="border-color:var(--clr-border)"><div style="font-size:18px;margin-bottom:4px">🥈</div><div style="font-size:13px;font-weight:600;color:var(--clr-heading)">Silver</div><div style="font-size:11px;color:var(--clr-muted)">0 баллов</div></div>
+    <div class="loy-card" data-l="gold"><div style="font-size:18px;margin-bottom:4px">🥇</div><div style="font-size:13px;font-weight:600;color:var(--clr-heading)">Gold</div><div style="font-size:11px;color:var(--clr-muted)">от 1 000</div></div>
+    <div class="loy-card" data-l="platinum"><div style="font-size:18px;margin-bottom:4px">💎</div><div style="font-size:13px;font-weight:600;color:var(--clr-heading)">Platinum</div><div style="font-size:11px;color:var(--clr-muted)">от 3 000</div></div>
   </div>
+  <div style="padding:14px;background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:10px;margin-bottom:14px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+      <span style="font-size:14px;font-weight:600;color:var(--clr-heading)">Ваш баланс</span>
+      <span id="loy-bal" style="font-size:22px;font-weight:700;color:var(--clr-heading);font-variant-numeric:tabular-nums">2 450</span>
+    </div>
+    <div style="height:6px;background:var(--clr-surface);border-radius:3px;overflow:hidden"><div id="loy-bar" style="height:100%;width:45%;background:linear-gradient(90deg,var(--clr-accent),#f6d365);border-radius:3px;transition:width .5s"></div></div>
+    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--clr-muted);margin-top:4px"><span>Silver</span><span id="loy-next"></span></div>
+  </div>
+  <div id="loy-benefits" style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px;min-height:0"></div>
+  <div style="display:flex;gap:8px">
+    <button class="dw-btn" id="loy-earn">💳 Оплатить 5 000 ₽</button>
+  </div>
+  <div id="loy-msg" style="display:none;margin-top:10px;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:500"></div>
 </div>
-<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-b{display:flex;flex-direction:column;gap:2px}.dw-btn{padding:12px 20px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:opacity .2s;display:inline-block;margin:0 auto}.dw-btn:hover{opacity:.85}@media(min-width:768px){.dw{max-width:480px;margin-left:auto;margin-right:auto}}</style>
-<script>(function(){var bal=2450,lvlEl=document.getElementById('loy-lvl'),bar=document.getElementById('loy-bar'),balEl=document.getElementById('loy-bal'),lvls=[{n:'Silver',m:0},{n:'Gold',m:1000},{n:'Platinum',m:3000}];document.getElementById('loy-btn').addEventListener('click',function(){var t=this;t.disabled=1;var st=setInterval(function(){bal++;balEl.textContent=bal.toLocaleString('ru');var p=bal%1000/10;bar.style.width=p+'%';var cl=lvls.filter(function(l){return bal>=l.m});var cu=cl[cl.length-1];if(cu){lvlEl.textContent=cu.n;lvlEl.style.background=cu.n==='Platinum'?'linear-gradient(135deg,#a18cd1,#fbc2eb)':cu.n==='Gold'?'linear-gradient(135deg,#f6d365,#fda085)':'linear-gradient(135deg,#a8edea,#fed6e3)'}if(bal>=2550||bal%100===0&&bal>=2550||bal===2550){clearInterval(st);t.disabled=0}},30);});})();</script>""",
+<style>.dw{margin:12px 0;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:24px}.dw-t{font-size:16px;font-weight:600;margin:0 0 16px;color:var(--clr-heading)}.dw-btn{padding:12px 20px;background:var(--clr-accent);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:opacity .2s;flex:1}.dw-btn:hover{opacity:.85}.loy-card{flex:1;text-align:center;padding:10px;border:2px solid var(--clr-border);border-radius:12px;transition:all .4s}.loy-card.active{background:var(--clr-accent)12;border-color:var(--clr-accent)}@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}@media(min-width:768px){.dw{max-width:480px;margin-left:auto;margin-right:auto}}</style>
+<script>(function(){var bal=2450,balEl=document.getElementById('loy-bal'),bar=document.getElementById('loy-bar'),nextEl=document.getElementById('loy-next'),benefits=document.getElementById('loy-benefits'),msg=document.getElementById('loy-msg'),cards=document.querySelectorAll('.loy-card'),lvls=[{n:'Silver',m:0,b:[{i:'🎁',t:'Приветственный бонус 100 баллов'}]},{n:'Gold',m:1000,b:[{i:'💰',t:'Кешбэк 5% баллами'},{i:'🚚',t:'Бесплатная доставка'}]},{n:'Platinum',m:3000,b:[{i:'💰',t:'Кешбэк 10% баллами'},{i:'🚚',t:'Бесплатная доставка'},{i:'🎂',t:'Бонус в день рождения 500 баллов'},{i:'⭐',t:'Персональный менеджер'}]}];function upd(){var cu=lvls.filter(function(l){return bal>=l.m});var cl=cu[cu.length-1];cards.forEach(function(c){c.classList.toggle('active',c.dataset.l===cl.n.toLowerCase())});var nx=lvls.filter(function(l){return l.m>bal});if(nx.length){var nn=nx[0];nextEl.textContent=nn.n+' ('+(nn.m-bal)+' баллов)'}else{nextEl.textContent='Максимальный уровень'}bar.style.width=Math.min(100,(bal-(cl.m||0))/((nx.length?nx[0].m:bal)-cl.m)*100)+'%';benefits.innerHTML='';cl.b.forEach(function(b){var e=document.createElement('div');e.style.cssText='display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:8px;font-size:13px;color:var(--clr-text);animation:fadeIn .3s';e.innerHTML='<span style="font-size:16px">'+b.i+'</span><span>'+b.t+'</span>';benefits.appendChild(e)})}document.getElementById('loy-earn').addEventListener('click',function(){var t=this;t.disabled=1;msg.style.display='none';bal+=100;balEl.textContent=bal.toLocaleString('ru');upd();msg.style.display='block';msg.style.background='#00b89414';msg.style.border='1px solid #00b89444';msg.style.color='#00b894';msg.textContent='+100 баллов за покупку 5 000 ₽';t.disabled=0});upd()})();</script>""",
         "widget_css": "",
         "widget_js": ""
     },
