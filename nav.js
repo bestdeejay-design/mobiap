@@ -127,7 +127,8 @@
         { name: 'Код Доступа', path: 'https://bestdeejay-design.github.io/kodstudy/' },
         { name: 'DAJET', path: 'https://dajet.ru/' },
         { name: 'Hype', path: 'https://hype-marketplace-1.web.app/' },
-        { name: 'AMBAR', path: 'https://bestdeejay-design.github.io/ambar/' }
+        { name: 'AMBAR', path: 'https://bestdeejay-design.github.io/ambar/' },
+        { name: 'Мини-игры', path: 'https://bestdeejay-design.github.io/minigames/' }
       ]
     },
     { name: 'Контакты', path: '/#contact' },
